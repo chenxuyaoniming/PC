@@ -1,20 +1,20 @@
 #gBanner-wrap{
     position: relative;
-    
+    overflow: hidden;
     a{
         float: left;
         position: absolute;
         display: block;
-        width: 100%;
-        overflow: hidden;
+        width: 1920px;
+        position: absolute;
+        left: 50%;
+        margin-left: -960px;
         
     }
     .gBannerImg{
-        display:block;
         text-align: center;
         height: 420px;
         width: 1920px;
-        margin: 0 auto;
     }
 }
 #g-list{
@@ -23,14 +23,56 @@
     margin: 0 auto;
     position: relative;
     z-index: 5;
+    .gListBox{
+        width: 500px;
+        height: 420px;
+        background: #fff;
+        position: absolute;
+        left: 240px;
+        top: 0;
+        display: none;
+    }
 }
 #g-list-left{
-    width: 212px;
+    width: 240px;
     height: 420px;
     background: #fff;
+    position: relative;
+   
     .gBannerList{
-        height: 420/6 px;
-        border: 1px solid orange;
+        height: 70px;
+        border: 1px solid #fff;
         box-sizing: border-box;
+        padding:0 30px;
+        position: relative;
+        z-index: 5;
+        >p{
+            font-size: 16px;
+            height: 30px;
+            line-height: 30px;
+        }
+        >i{
+            position: absolute;
+            right: 20px;
+            height: 20px;
+            width: 5px;
+            height: 20px;
+            font-style: normal;
+        }
+        >span{
+            font-size: 12px;
+            margin:  0 4px;
+            &:hover{
+                color: orange;
+            }
+        }
+        &:hover{
+            border-color: orange;
+            border-right-color: #fff;
+            cursor: pointer;
+            >i{
+                display: none;
+            }
+        }
     }
 }
