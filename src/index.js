@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 import App from './App';
 import {Router,Route,hashHistory,IndexRedirect,IndexRoute} from 'react-router';
 import registerServiceWorker from './registerServiceWorker';
