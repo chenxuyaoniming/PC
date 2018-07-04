@@ -1,0 +1,25 @@
+{
+  "name": "pc",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "react-scripts": "1.1.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "jquery": "^3.3.1",
+    "mockjs": "^1.0.1-beta3",
+    "node-sass": "^4.9.0",
+    "react": "^15.6.2",
+    "react-dom": "^15.6.2",
+    "react-redux": "^5.0.7",
+    "react-router": "^2.8.1",
+    "redux": "^4.0.0",
+    "sass-loader": "^7.0.3"
+  }
+}

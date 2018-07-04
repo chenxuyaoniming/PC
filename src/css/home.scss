@@ -1,0 +1,35 @@
+#gBanner-wrap{
+    position: relative;
+    
+    a{
+        float: left;
+        position: absolute;
+        display: block;
+        width: 100%;
+        overflow: hidden;
+    }
+    .gBannerImg{
+        display:block;
+        text-align: center;
+        height: 420px;
+        width: 1920px;
+        margin: 0 auto;
+    }
+}
+#g-list{
+    width: 1200px;
+    height: 420px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 5;
+}
+#g-list-left{
+    width: 212px;
+    height: 420px;
+    background: #fff;
+    .gBannerList{
+        height: 420/6 px;
+        border: 1px solid orange;
+        box-sizing: border-box;
+    }
+}
