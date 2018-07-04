@@ -21,5 +21,17 @@
     "react-router": "^2.8.1",
     "redux": "^4.0.0",
     "sass-loader": "^7.0.3"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenxuyaoniming/PC.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chenxuyaoniming/PC/issues"
+  },
+  "homepage": "https://github.com/chenxuyaoniming/PC#readme"
 }
