@@ -10,7 +10,9 @@ import './css/app.scss'
 import './font/iconfont.css'
 
 ReactDOM.render(<Router history={hashHistory}>
-    <Route path='/' component={App}></Route>
+    <Route path='/' component={App}>
+        <IndexRedirect to='/home' />
+    </Route>
     <Route path='/home' component={Home}></Route>
 </Router>, document.getElementById('root'));
 registerServiceWorker();
