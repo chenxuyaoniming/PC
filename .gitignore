@@ -8,8 +8,8 @@
 
 # production
 /build
-index.js
-*.json
+/src/index.js
+/src/*.json
 # misc
 .DS_Store
 .env.local
