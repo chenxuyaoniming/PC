@@ -10,34 +10,36 @@ class Register extends React.Component{
         }
     }
     //判断手机号
-    telCheck(event){
-        this.tel=event.target.value
-        console.log(this.tel)
-        var reg=/^1[34578]\d{9}$/
-        if(reg.test(this.tel)==false){
-            this.setState({
-                telError:'请输入正确的手机号'
-            })
-        }else{
-            this.setState({
-                telError:''
-            })
-        }
-    }
+    // telCheck(event){
+    //     this.tel=event.target.value
+    //     console.log(this.tel)
+    //     var reg=/^1[34578]\d{9}$/
+    //     if(reg.test(this.tel)==false){
+    //         this.setState({
+    //             telError:'请输入正确的手机号'
+    //         })
+    //     }else{
+    //         this.setState({
+    //             telError:''
+    //         })
+    //     }
+    // }
+   
+
     //判断密码
-    passCheck(event){
-        this.pass=event.target.value
-        var reg=/^\w{6,20}$/;
-        if(reg.test(this.pass)==false){
-            this.setState({
-                passError:'密码为6-20位数字字母下划线'
-            })
-        }else{
-            this.setState({
-                passError:''
-            })
-        }
-    }
+    // passCheck(event){
+    //     this.pass=event.target.value
+    //     var reg=/^\w{6,20}$/;
+    //     if(reg.test(this.pass)==false){
+    //         this.setState({
+    //             passError:'密码为6-20位数字字母下划线'
+    //         })
+    //     }else{
+    //         this.setState({
+    //             passError:''
+    //         })
+    //     }
+    // }
     render(){
         return(
             <div className='Register-big'>
@@ -54,7 +56,7 @@ class Register extends React.Component{
                                 <div className='div3'><span className='bt-left'>动态密码</span><input type='text'/><span className='yzmm'>获取验证码</span></div>
                                 <div className='div4'><span className='bt-left'>密码</span><input type='text' placeholder='请输入登录密码' onBlur={(event)=>this.passCheck(event)} /></div>
                                 <div className='div5'><span className='bt-left'>确认密码</span><input type='text' placeholder='请再次输入登录密码' /></div>
-                                <button className='register'>立即注册</button>
+                                <button onClick={this.register} className='register'>立即注册</button>
                             </div>
                             <div className='email'>
                                 <div className='div1'><span className='bt-left'>登录账号</span><input type='text' placeholder='请输入手机号' /></div>
@@ -65,7 +67,7 @@ class Register extends React.Component{
                             </div>
                     </div>
                     <div className='M-box-right'>
-                        <p className='right-p1'>已有账号,<Link to='/login'><a>立即登录</a></Link></p>
+                        <p className='right-p1'>已有账号,<Link to='/login'><em>立即登录</em></Link></p>
                         <p className='right-p2'>使用其他方式登录</p>
                     </div>
 

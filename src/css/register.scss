@@ -1,6 +1,6 @@
 .Register-big{
     position: relative;
-    background: deepskyblue;
+    background:deepskyblue;
     width: 100%;
     height: 540px;
     .M-box{
@@ -93,6 +93,7 @@
                     line-height: 30px;
                 }
                 .yzmm{
+                    cursor: pointer;
                     float: left;
                     display: inline-block;
                     width: 114px;
@@ -101,8 +102,10 @@
                     margin-left: 10px;
                 }
                 .replace{
-                    margin-left: 3px;
-
+                    font-size: 14px;
+                    color: orangered;
+                    margin-left: 5px;
+                    cursor: pointer;
                     text-align: center;
                     line-height: 30px;
                 }
@@ -129,6 +132,8 @@
                     line-height: 30px;
                 }
                 .yzmm{
+                    
+                    cursor: pointer;
                     background: white;
                     text-align: center;
                     line-height: 28px;
@@ -136,7 +141,7 @@
                     display: inline-block;
                     width: 114px;
                     height: 28px;
-                    border: 1px solid #ddd;
+                    border: 1px solid black;
                     margin-left: 10px;
                 }
             }
@@ -146,7 +151,6 @@
                 .bt-left{
                     line-height: 30px;
                     text-align: right;
-                   
                     float: left;
                     height: 30px;
                     display: inline-block;
@@ -328,7 +332,8 @@
             // background: red;
             .right-p1{
                 margin-top: 250px;
-                a{
+                em{
+                    font-style: normal;
                     cursor: pointer;
                     margin-left: 3px;
                     color: orangered;
