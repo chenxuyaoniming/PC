@@ -8,6 +8,7 @@ import About from './components/about'
 import './css/home.scss'
 import './css/index.scss'
 import './css/about.scss'
+import './css/app.scss'
 
 ReactDOM.render(<Router history={hashHistory}>
     <Route path='/' component={App}>

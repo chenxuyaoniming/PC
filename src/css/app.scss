@@ -2,7 +2,7 @@
 .Zapp1{
     background: #ececec;
 }
-.zheader1,.Zheader{
+.zheader1,.Zheader,{
     width: 1200px;
     margin: auto;
 }
@@ -50,6 +50,7 @@
     position: absolute;
     top: 36px;
     left: -150px;
+    z-index: 1;
     font-size: 12px;
     height: 200px;
     width: 240px;
@@ -68,15 +69,362 @@
 }
 .zspan3 div li:hover{
     color: orange;
+    
+   
 }
 .zheader{
     background: white;
     .zheader1{
+        height: 85px;
         background: white;
-        border: 1px solid red;
-        .zimg img{
-            width: 298px;
-            height: 85px;
+        
+        
+        padding: 22px 0 23px 0;
+        
+    }
+    .zimg,.zsou{
+        height: 85px;
+        float: left;
+        
+    }
+    .zimg img{
+        width: 298px;
+        height: 85px;
+    }
+    .zsou{
+        width: 500px;
+        height: 85px;
+        text-align: center;
+        margin-left:30px; 
+        // border: 1px solid red;
+        
+        .zxia{
+            border: 1px solid orangered;
+            margin-top: 15px;
+            position: relative;
+            border-radius: 5px;
+           
+        }
+        .zxia>div{
+            height:0;
+            width:100% ;
+            clear: both;
+        }
+        .zxia span{
+            display: inline-block;
+            height: 35px;
+            float: left;
+        }
+        .zxia input{
+            height: 33px;
+            width: 328px;
+            border: none;
+            float: left;
+            text-indent: 5px;
+        }
+        .zxiaspan{
+            width: 90px;
+            text-align: center;
+            line-height: 34px;
+            background: #cccc;
+            position: relative;
+            
+        }
+        .zxiaspan div{
+            position: absolute;
+            
+            display: none;
+        }
+        .zsli li{
+            &:hover{
+                background: #cccccc;
+                cursor: pointer;
+            }
+            width: 90px;
+            text-align: center;
+            line-height: 34px;
+            background: #eeeeee;
+            
+        }
+        .zxiaspan1{
+            
+            width: 80px;
+            background: orangered;
+            text-align: center;
+            line-height: 34px;
+            color: white;
+        }
+    }
+    .zrensou{
+        width: 500px;
+        height: 30px;
+        font-size: 15px;
+        .zres1{
+            color: #666666;
+        }
+        .zres2:hover,.zres3:hover{
+            color: orange;
+        }
+    }
+    .zrensou span{
+        display: inline-block;
+        float: left;
+        margin: 5px;
+    }
+    .zkefu{
+        float: left;
+        height: 75px;
+        padding-top: 10px;
+        width: 230px;
+        margin-left: 100px;
+        
+        background:rgba(200,250,200,0.5);
+        line-height: 30px;
+        .zkefu_1{
+            color:orangered;
+            font-size: 20px; 
+        }
+    }
+    
+}
+
+.znav_z{
+    background: #4ece5a;
+    #znav{
+        width: 1200px;
+        height: 42px;
+        margin: auto;
+        background:#4ece5a;
+        
+        .znav_a{
+            float: left;
+            padding: 0 30px;
+            height: 42px;
+            line-height: 42px;
+            font-size: 16px;
+            color: white;
+        }
+        .global_tit{
+            width: 240px;
+            height: 42px;
+            float: left;
+            text-align: center;
+            color: white;
+            line-height: 42px;
+        }
+        
+        .jian{
+            position: relative;
+            .jian_1{
+                
+                position: absolute;
+                top: -15px;
+                right: 0;
+                background:orange;
+                color: white;
+                display: inline-block;
+                height: 22px ;
+                width: 22px;
+                border-radius: 11px;
+               font-size: 12px;
+               line-height: 22px;
+
+               text-align: center;
+            }
+        }
+        .jian_a{
+            position: relative;
+            .jian_2{
+                position: absolute;
+                top: -15px;
+                right: 0;
+                background:orange;
+                color: white;
+                display: inline-block;
+                height: 22px ;
+                width: 22px;
+                border-radius: 11px;
+               font-size: 12px;
+               line-height: 22px;
+
+               text-align: center;
+            }
+        }
+        
+    }
+}
+.zqi{
+    background: white;
+    .zqi1{
+        background:white;
+        width: 1200px;
+        height: 140px;
+        margin: auto;
+        margin-top: 10px;
+        .zqi2{
+            
+            width: 300px;
+            height: 52px;
+            padding: 40px 0;
+            overflow: hidden;
+            float: left;
+            div{
+                float: left;
+            }
+            .ziconq{
+                height: 50px;
+                width: 50px;
+                border-radius: 25px;
+                border: 1px solid #F34;
+                line-height: 50px;
+                color: red;
+                text-align: center;
+                
+                .icon-flag{
+                    font-size: 30px;
+                }
+                
+            }
+            .ziconq1{
+                height: 50px;
+                width: 50px;
+                border-radius: 25px;
+                border: 1px solid yellow;
+                line-height: 50px;
+                color:yellow;
+                text-align: center;
+                
+                .icon-zuanshi{
+                    font-size: 30px;
+                }
+                
+            }
+            .ziconq2{
+                height: 50px;
+                width: 50px;
+                border-radius: 25px;
+                border: 1px solid red;
+                line-height: 50px;
+                color:red;
+                text-align: center;
+                
+                .icon-youhuiquan{
+                    font-size: 30px;
+                }
+                
+            }
+            .ziconq3{
+                height: 50px;
+                width: 50px;
+                border-radius: 25px;
+                border: 1px solid rgb(10, 112, 230);
+                line-height: 50px;
+                color:#05f;
+                text-align: center;
+                
+                .icon-shou{
+                    font-size: 30px;
+                }
+                
+            }
+            
+            .ziconp{
+               width: 240px;
+                
+                margin-left: 8px;
+                h3{
+                    font-size: 20px;
+                    line-height: 30px;
+                } 
+                span{
+                    font-size:12px;
+                    line-height: 18px;
+                }
+            }
+        }
+    }
+}
+
+.z_footer{
+    background: #323232;
+    .zfooter{
+        width: 1200px;
+        height: 120px;
+        margin: auto;
+        background: #323232;
+        padding: 20px 0;
+        .zfooter_a{
+            width: 160px;
+            float: left;
+            p{
+                padding-left:5px; 
+            }
+        }
+        .zfooter_p{
+            border-left: 3px solid #4ece5a;
+             
+        }
+        .zfooter_x{
+            color: #eeeeee;
+            font-size: 16px;
+            line-height: 24px;
+        }
+        .zfooter_s{
+            color: #777777;
+            font-size: 12px;
+            line-height: 30px;
+        }
+        .zfooter_span{
+            float: right;
+            margin-top: 10px;
+            color: #999;
+            line-height: 24px;
+            font-size: 12px;
+        }
+    }
+}
+.zdibuf{
+    background: #242424;
+    .zdibuf1{
+        background: #242424;
+        width: 1200px;
+        height: 185px;
+        margin: auto;
+        .zdb{
+            padding: 10px 0;
+        }
+        .zdibu{
+            width: 74px;
+            color: #999;
+            display: inline-block;
+            padding: 0 10px; 
+            font-size: 12px;
+        }
+        .zdibu1{
+            border-left: 1px solid #999;
+            border-right: 1px solid #999;
+        }
+        .zdibuf2{
+            color: #999;
+            font-size: 12px ;
+            .zwang{
+                font-size: 12px ;
+                color: white;
+            }
+
+        }
+        .zdibuf3{
+            margin-top:10px; 
+            span{
+                color: #777777;
+            }
+            .zwangs{
+                display: inline-block;
+                padding: 0 5px;
+                font-size: 12px;
+                border-right: 1px solid #777777;
+                color: #777777;
+            }
         }
     }
 }
