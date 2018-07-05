@@ -1,19 +1,82 @@
 
-
-.Zheader{
-    height: 36px;
+.Zapp1{
+    background: #ececec;
+}
+.zheader1,.Zheader{
     width: 1200px;
     margin: auto;
+}
+.Zheader{
+    height: 36px;
+    
+    background: #ececec;
+    line-height: 36px;
     // background: red;
 }
-.Zheader_p{
-    width: 400px;
+.zheader_p{
+    color: #666666;
     font-size: 12px;
     float: left;
 }
 
-.Zheader_s{
-    width: 600px;
+.zheader_s{
+   
     font-size: 12px;
     float:right;
+}
+.zheader_s span{
+    margin-right: 20px;
+    padding:0 5px;
+}
+.zspan1{
+    color:royalblue;
+}
+.zspan1:hover{
+    color: orange;
+}
+.zspan2{
+    color: orange;
+}
+.zspan3{
+    &:hover{
+        background: white;
+    }
+    display: inline-block;
+    position: relative;
+    height: 36px;
+}
+
+.zspan3 div{
+    position: absolute;
+    top: 36px;
+    left: -150px;
+    font-size: 12px;
+    height: 200px;
+    width: 240px;
+    border: 1px solid #ddd;
+    border-top: none;
+    display: none;
+    background: white;
+}
+.zspan3 div li{
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    text-indent:20px ;
+    float: left;
+    cursor: pointer;
+}
+.zspan3 div li:hover{
+    color: orange;
+}
+.zheader{
+    background: white;
+    .zheader1{
+        background: white;
+        border: 1px solid red;
+        .zimg img{
+            width: 298px;
+            height: 85px;
+        }
+    }
 }
