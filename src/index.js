@@ -4,15 +4,12 @@ import App from './App';
 import {Router,Route,hashHistory,IndexRedirect,IndexRoute} from 'react-router';
 import registerServiceWorker from './registerServiceWorker';
 import Home from './components/home'
+import About from './components/about'
 import './css/home.scss'
 import './css/index.scss'
-import './css/app.scss'
-import './font/iconfont.css'
+import './css/about.scss'
 
 ReactDOM.render(<Router history={hashHistory}>
-    <Route path='/' component={App}>
-        <IndexRedirect to='/home' />
-    </Route>
-    <Route path='/home' component={Home}></Route>
-</Router>, document.getElementById('root'));
+    <Route path='/' component={About}></Route>
+</Router>,document.getElementById('root'));
 registerServiceWorker();

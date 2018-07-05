@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 import { Link } from 'react-router';
 import './font/iconfont.css';
 class App extends Component {
@@ -16,6 +17,7 @@ class App extends Component {
         </div> 
         )
       }
+
   }
       
       export default App;
