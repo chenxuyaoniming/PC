@@ -101,7 +101,7 @@ class App extends Component {
             
           </div>
         </div>
-          111111111111111111111111
+
 
         {/* 底部footer */}
         <div className="z_footer">
@@ -151,6 +151,7 @@ class App extends Component {
             </div>
           </div>
         </div>
+        <p></p>
       </div> 
         )
       }
@@ -170,4 +171,5 @@ class App extends Component {
       $('.zsli').stop().slideUp(300);
     })
   })
+
       export default App;
