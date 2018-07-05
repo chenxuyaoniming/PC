@@ -12,10 +12,11 @@ import './css/index.scss'
 import './css/login.scss'
 import './css/register.scss'
 import './css/retrieve.scss'
+import './css/app.scss'
 
 ReactDOM.render(<Router history={hashHistory}>
     <Route path='/' component={App}>
-        <IndexRedirect to='/home' />
+        {/* <IndexRedirect to='/home' /> */}
     </Route>
     <Route path='/home' component={Home}></Route>
     <Route path='/login' component={Login}></Route>
