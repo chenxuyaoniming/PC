@@ -10,6 +10,8 @@ import './css/index.scss'
 import './css/about.scss'
 
 ReactDOM.render(<Router history={hashHistory}>
-    <Route path='/' component={About}></Route>
-</Router>,document.getElementById('root'));
+    <Route path='/' component={App}>
+    </Route>
+    <Route path='/home' component={Home}></Route>
+</Router>, document.getElementById('root'));
 registerServiceWorker();
