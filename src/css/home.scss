@@ -1,20 +1,20 @@
 #gBanner-wrap{
     position: relative;
-    
+    overflow: hidden;
     a{
         float: left;
         position: absolute;
         display: block;
-        width: 100%;
-        overflow: hidden;
+        width: 1920px;
+        position: absolute;
+        left: 50%;
+        margin-left: -960px;
         
     }
     .gBannerImg{
-        display:block;
         text-align: center;
         height: 420px;
         width: 1920px;
-        margin: 0 auto;
     }
 }
 #g-list{
@@ -22,15 +22,146 @@
     height: 420px;
     margin: 0 auto;
     position: relative;
-    z-index: 5;
+    z-index: 3;
+    
 }
-#g-list-left{
-    width: 212px;
+.gListBox{
+    width: 500px;
     height: 420px;
     background: #fff;
+    position: absolute;
+    left: 239px;
+    top: 0;
+    display: none;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px solid orange;
+    z-index: 6;
+    >p{
+        font-size: 16px;
+        color: orange;
+    }
+    >span{
+        display: inline-block;
+        margin: 5px 10px 5px 0;
+        font-size: 12px;
+    }
+}
+#g-list-left{
+    width: 240px;
+    height: 420px;
+    background: #fff;
+    position: relative;
+   
     .gBannerList{
-        height: 420/6 px;
-        border: 1px solid orange;
+        height: 70px;
+        border: 1px solid #fff;
         box-sizing: border-box;
+        padding:0 30px;
+        position: relative;
+        z-index: 5;
+        >p{
+            font-size: 16px;
+            height: 30px;
+            line-height: 30px;
+        }
+        >i{
+            position: absolute;
+            right: 20px;
+            height: 20px;
+            width: 5px;
+            height: 20px;
+            font-style: normal;
+        }
+        >b{
+            position: absolute;
+            left: 10px;
+            top: 20px;
+            color: rgb(110, 185, 247);
+        }
+        >span{
+            font-size: 12px;
+            margin:  0 4px;
+            &:hover{
+                color: orange;
+            }
+        }
+        &:hover{
+            border-color: orange;
+            border-right-color: #fff;
+            cursor: pointer;
+            z-index: 7;
+            >i{
+                display: none;
+            }
+        }
+    }
+}
+#gd{
+    width: 80px;
+    height: 30px;
+    background: rgba(0,0,0,.4);
+    border-radius:15px;
+    position: absolute; 
+    left: 50%;
+    z-index: 10;
+    bottom: 20px;
+    margin-left: -50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    cursor: pointer;
+    >span{
+        height: 20px;
+        width: 20px;
+        border-radius: 50%;
+        display: block;
+        background: #aaa;
+        float: left;
+       
+    }
+    .bgcolor{
+        background: orange;
+    }
+}
+
+#gContent-wrap{
+    margin-top: 50px;
+    #gContent{
+        width: 1200px;
+        margin: 0 auto;
+        h2{
+            height: 74px;
+            font-size: 26px;
+            line-height: 74px;
+            text-align: center;
+        }
+        .gContentlist{
+            height: 600px;
+            background: #ccc;
+        }
+        >a{
+            display: block;
+          
+            width: 200px;
+            height: 50px;
+            box-sizing: 10px;
+            text-align: center;
+            line-height: 50px;
+            border: 1px solid #111;
+            margin: 40px auto;
+            &:hover{
+                color: rgb(106, 245, 141);
+                border-color:rgb(106, 245, 141);
+            }
+        }
+    }
+}
+#gMore-wrap{
+    background: #f0f0f0;
+    #gMore{
+        height: 612px;
+        width: 1200px;
+        margin: 0 auto;
     }
 }
