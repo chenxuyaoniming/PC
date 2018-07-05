@@ -1,0 +1,27 @@
+.eve-big{
+    width: 100%;
+    position: relative;
+    height: 540px;
+    background:red;
+    .center{
+        width: 860px;
+        height: 408px;
+        background: #ddd;
+        position: absolute;
+        left: 50%;
+        top:50%;
+        margin: -204px 0 0 -430px;
+        border-radius: 5px;
+        p{
+            border-radius: 5px 5px 0 0;
+            width: 860px;
+            height: 44px;
+            text-align: center;
+            line-height: 44px;
+            color:white;
+            font-size: 16px;
+            letter-spacing: 2px;
+            background:deepskyblue;
+        }
+    }
+}

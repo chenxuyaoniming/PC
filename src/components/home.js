@@ -66,9 +66,6 @@ class Home extends React.Component {
     move(e) {
         console.log(e.target)
     }
-
-
-
     render() {
         return (
             <div>
