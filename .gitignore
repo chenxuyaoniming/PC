@@ -10,7 +10,7 @@
 /build
 /src/index.js
 
-/*.json
+*.json
 /src/App.js
 /src/*.json
 # misc
