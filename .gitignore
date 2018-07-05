@@ -8,7 +8,9 @@
 
 # production
 /build
-
+/src/index.js
+/src/App.js
+/src/*.json
 # misc
 .DS_Store
 .env.local
