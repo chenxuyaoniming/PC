@@ -1,0 +1,75 @@
+#aside{
+    width: 34px;
+    background: rgba(0,0,0,.8);
+    height: 100%;
+    position: fixed;
+    left: 0;
+    z-index: 999;
+    #g-phone{
+        height: 100px;
+        padding: 10px 0;
+        box-sizing: border-box;
+        line-height: 18px;
+        background: linear-gradient(rgb(248, 162, 64),rgb(252, 101, 42));
+        text-align: center;
+        font-size: 18px;
+        color: #f6f6f6;
+    }
+    i{
+        color: #aaa;
+        display: block;
+        width: 34px;
+        height: 34px;
+        font-size: 28px;
+        text-align: center;
+        line-height: 34px;
+        margin-top: 10px;
+        cursor: pointer;
+        &:hover{
+            color: #fff;
+            background: rgb(255, 115, 0);
+        }
+    }
+    P{
+        height: 40px;
+        width: 34px;
+        color: #ccc;
+        font-size: 15px;
+        text-align: center;
+        line-height: 40px;
+        position: absolute;
+        bottom: 100px;
+        background: #000;
+        cursor: pointer;
+    }
+    >span{
+        height: 34px;
+        width: 34px;
+        display: block;
+        font-size: 20px;
+        text-align: center;
+        line-height: 34px;
+        position: absolute;
+        bottom: 50px;
+        color: #f6f6f6;
+        cursor: pointer;
+        transition: 0.5s;
+        &:hover{
+            transform: rotateZ(360deg)
+        }
+    }
+    strong{
+        height: 50px;
+        width: 50px;
+        display: block;
+        font-size: 30px;
+        text-align: center;
+        line-height: 50px;
+        position: absolute;
+        background: #000;
+        color: #f6f6f6;
+        border-radius: 6px;
+        bottom: 50px;
+        left: -50px;
+    }
+}
