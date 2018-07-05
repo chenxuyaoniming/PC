@@ -1,15 +1,18 @@
 import React from 'react';
 import '../font/iconfont.css'
 import { Link } from 'react-router';
-
+import bgimg from '../img/bg1.jpg'
+const homeimg={
+    backgroundSize:'100% 100%',
+    backgroundImage:'url('+bgimg+')'
+}
 class Login extends React.Component{
     constructor(props){
         super(props)
-
     }
     render(){
         return(
-            <div className='warp'>
+            <div className='warp' style={homeimg}>
                 <div className='box'>
                     <div className='user'>
                         <i className='icon iconfont icon-ren'></i>

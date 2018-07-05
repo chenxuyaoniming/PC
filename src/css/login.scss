@@ -57,6 +57,9 @@
             }
         }
         .forget{
+            &:hover{
+                text-decoration: underline;
+            }
             display: block;
             color: orangered;
             text-align: right;

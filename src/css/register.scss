@@ -1,6 +1,5 @@
 .Register-big{
     position: relative;
-    background:deepskyblue;
     width: 100%;
     height: 540px;
     .M-box{
@@ -13,6 +12,7 @@
         margin: -200px 0 0 -430px;
         border-radius: 5px;
         background: #ddd;
+        opacity: .9;
         .M-box-left{
             float: left;
             width: 580px;
@@ -258,8 +258,9 @@
                     margin-left: 10px;
                 }
                 .replace{
-                    margin-left: 3px;
-
+                    margin-left: 5px;
+                    color: orangered;
+                    font-size: 14px;
                     text-align: center;
                     line-height: 30px;
                 }
@@ -270,7 +271,6 @@
                 .bt-left{
                     line-height: 30px;
                     text-align: right;
-                   
                     float: left;
                     height: 30px;
                     display: inline-block;
