@@ -1,0 +1,42 @@
+.warp{
+    width: 100%;
+    height: 540px;
+    background: deepskyblue;
+    margin: 0 auto;
+    .box{
+        margin-top: 100px;
+        margin-right: 200px;
+        float: right;
+        width: 370px;
+        height: 370px;
+        background:white;
+        opacity: .8;
+        border-radius: 5px;
+        .user{
+
+            margin: 20px auto;
+            background: white;
+            height: 40px;
+            width: 270px;
+            border:1px solid black;
+            input{
+                margin-top: 10px;
+                margin-left: 50px;
+                width: 200px;
+            }
+        }
+        .pass{
+            margin:30px auto;
+            background: white;
+            height: 40px;
+            width: 270px;
+            border-bottom: 2px solid #cedbe7;
+            border:1px solid black;
+            input{
+                margin-top: 10px;
+                margin-left: 50px;
+                width: 200px;
+            }
+        }
+    }
+}
