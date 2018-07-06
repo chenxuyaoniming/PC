@@ -8,6 +8,7 @@ import Home from './components/home'
 import Retrieve from './components/retrieve'
 import Login from './components/login'
 import Register from './components/register'
+import About  from './components/about'
 import './css/home.scss'
 import './css/index.scss'
 import './css/about.scss'
@@ -23,6 +24,7 @@ ReactDOM.render(<Router history={hashHistory}>
         <IndexRoute component={Home} />
         <Route path='/home' component={Home}></Route>
         <Route path='/login' component={Login}></Route>
+        <Route path='/about/:id' component={About}></Route>
         <Route path='/register' component={Register}></Route>
         <Route path='/retrieve' component={Retrieve}></Route>
     </Route>
