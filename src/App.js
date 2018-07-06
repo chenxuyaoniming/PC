@@ -151,8 +151,10 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <p></p>
+        
+        <Xiaoguang></Xiaoguang>
       </div> 
+      
         )
       }
 
@@ -171,5 +173,26 @@ class App extends Component {
       $('.zsli').stop().slideUp(300);
     })
   })
-
+class Xiaoguang extends React.Component{
+  constructor(props){
+    super(props)
+  }
+  render(){
+    return(
+      <div className="zer">
+        <div className="zxr">
+          <div>
+            <p>在线质询</p>
+            <span>Online inquiry</span>
+          </div>
+        </div>
+        <div className="zxr1">
+          <div className="zxr2"> <i className="icon iconfont icon-dianhua"></i>旅游顾问1号</div>
+          <div className="zxr2"> <i className="icon iconfont icon-dianhua"></i>旅游顾问2号</div>
+          <div className="zxr2"> <i className="icon iconfont icon-dianhua"></i>旅游顾问3号</div>
+        </div>
+      </div>
+    )
+  }
+}
       export default App;
