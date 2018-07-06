@@ -13,8 +13,6 @@ import './css/index.scss'
 import './css/about.scss'
 import './css/gg1.scss'
 import './css/aside.scss'
-
-
 import './css/login.scss'
 import './css/register.scss'
 import './css/retrieve.scss'
@@ -22,11 +20,12 @@ import './css/app.scss'
 
 ReactDOM.render(<Router history={hashHistory}>
     <Route path='/' component={App}>
-        {/* <IndexRedirect to='/home' /> */}
+        <IndexRoute component={Home} />
+        <Route path='/home' component={Home}></Route>
+        <Route path='/login' component={Login}></Route>
+        <Route path='/register' component={Register}></Route>
+        <Route path='/retrieve' component={Retrieve}></Route>
     </Route>
-    <Route path='/home' component={Home}></Route>
-    <Route path='/login' component={Login}></Route>
-    <Route path='/register' component={Register}></Route>
-    <Route path='/retrieve' component={Retrieve}></Route>
+    
 </Router>, document.getElementById('root'));
 registerServiceWorker();

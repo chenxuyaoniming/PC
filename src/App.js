@@ -1,20 +1,25 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router';
 import './font/iconfont.css';
-import {Button} from 'react-bootstrap';
 import $ from 'jquery';
+import G1 from './components/gg1';
+import Aside from './components/aside'
+
 class App extends Component {
   render() {
     return (
 
       <div className="Zapp">
+          <G1 />
+
+          <Aside />
         <div className="Zapp1">
           <div className="Zheader">
             <div className="zheader_p">
               <span>您好！欢迎光临河南康辉国际旅行社有限责任公司</span>
             </div>
             <div className="zheader_s">
-                <span><Link to='' className="zspan1">登陆</Link></span><span ><Link to=''className="zspan2">免费注册</Link></span><span><Link to=''><i className="icon iconfont icon-dingdan">订单查询</i></Link></span><span className="zspan3"><i className="icon iconfont icon-fenqu">网站导航</i><div id="zdao"><li>出国游</li><li>国内游</li><li>海岛游</li><li>私人订制</li><li>签证</li><li>游记攻略</li><li>景点</li><li>热门路线</li><li>嗨皮暑期档</li><li>周边游</li></div></span>
+                <span><Link to='/login' className="zspan1">登陆</Link></span><span ><Link to='/register'className="zspan2">免费注册</Link></span><span><Link to=''><i className="icon iconfont icon-dingdan">订单查询</i></Link></span><span className="zspan3"><i className="icon iconfont icon-fenqu">网站导航</i><div id="zdao"><li>出国游</li><li>国内游</li><li>海岛游</li><li>私人订制</li><li>签证</li><li>游记攻略</li><li>景点</li><li>热门路线</li><li>嗨皮暑期档</li><li>周边游</li></div></span>
             </div>
           </div>
         </div>
@@ -59,6 +64,26 @@ class App extends Component {
             </ul>
           </div>
         </div>
+
+
+
+
+
+      
+      {
+          this.props.children
+        }
+
+
+
+
+
+
+
+
+
+
+
         {/* footer上面 */}
         <div className="zqi">
           <div className="zqi1">
@@ -101,6 +126,16 @@ class App extends Component {
             
           </div>
         </div>
+
+
+
+
+
+
+
+
+
+
 
 
         {/* 底部footer */}
