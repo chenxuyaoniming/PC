@@ -126,8 +126,9 @@
             width: 90px;
             text-align: center;
             line-height: 34px;
-            background: #cccc;
+            background: #f8f8f8;
             position: relative;
+            border-radius: 5px;
             
         }
         .zxiaspan div{
@@ -137,13 +138,15 @@
         }
         .zsli li{
             &:hover{
-                background: #cccccc;
+                background: #f8f8f8;
                 cursor: pointer;
             }
             width: 90px;
             text-align: center;
             line-height: 34px;
-            background: #eeeeee;
+            background: #fff;
+            border:1px solid #e6e6e6;
+            border-top: none;
             
         }
         .zxiaspan1{
@@ -187,7 +190,7 @@
     }
     
 }
-
+// 导航
 .znav_z{
     background: #4ece5a;
     #znav{
@@ -197,6 +200,9 @@
         background:#4ece5a;
         
         .znav_a{
+            &:hover{
+                background: #32a241;
+            }
             float: left;
             padding: 0 30px;
             height: 42px;
@@ -209,6 +215,7 @@
             height: 42px;
             float: left;
             text-align: center;
+            background: #32c241;
             color: white;
             line-height: 42px;
         }
@@ -428,3 +435,5 @@
         }
     }
 }
+
+// 你好哈喽
