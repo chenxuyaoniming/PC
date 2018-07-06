@@ -390,6 +390,8 @@
         }
     }
 }
+
+// 底部
 .zdibuf{
     background: #242424;
     .zdibuf1{
@@ -436,4 +438,59 @@
     }
 }
 
-// 你好哈喽
+// 你好哈喽小客服
+
+.zer{
+    position: fixed;
+    top: 300px;
+    right: 30px;
+    width: 160px;
+    height: 217px;
+    
+    
+    .zxr{width: 160px;
+        height: 77px;
+        overflow: hidden;
+        background: url(../img/reqiqiu.jpg) no-repeat center/cover;
+        div{
+            width: 130px;
+            height: 45px;
+            margin: 23px  0  0 30px;
+            text-align: center;
+            font-size: 12px;
+            color: #32a241;
+            p{
+                font-size: 20px; 
+            }
+        }
+    }
+    .zxr1{
+        width: 130px;
+        height: 140px;
+        background: white;
+        border:1px solid #05f;
+        overflow: hidden;
+        margin-left: 30px;
+        border-top: none;
+        div{
+            width: 100px;
+            height: 30px;
+            border: 1px solid #05f;
+            font-size: 12px;
+            
+            text-align: center;
+            border-radius: 15px;
+            color: #5178dd;
+            background:rgba(10, 120, 209, 0.3);
+           margin: 10px 15px;
+            .icon-dianhua{
+                display: inline-block;
+                background: blue;
+                color: white;
+                height: 20px;
+                width: 20px;
+                border-radius: 10px;margin-top: 5px;
+            }
+        }
+    }
+}
