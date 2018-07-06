@@ -1,5 +1,24 @@
+
 dist
 node_modules
+
+# See https://help.github.com/ignore-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+
+# testing
+/coverage
+
+# production
+/build
+/src/index.js
+
+*.json
+/src/App.js
+/src/*.json
+# misc
+
 .DS_Store
 webpack.config.js
 index.js

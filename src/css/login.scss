@@ -1,0 +1,107 @@
+.warp{
+    width: 100%;
+    height: 540px;
+    background: deepskyblue;
+    margin: 0 auto;
+    .box{
+        margin-top: 100px;
+        margin-right: 200px;
+        float: right;
+        width: 370px;
+        height: 370px;
+        background:#ddd;
+        opacity: .9;
+        border-radius: 5px;
+        .user{
+            background: white;
+            margin: 50px auto;
+            background: white;
+            height: 40px;
+            width: 270px;
+            border-bottom:2px solid #ddd;
+            i{
+                margin-left: 10px;
+                padding-right: 10px;
+                border-right: 1px solid #ddd;
+                font-style: normal;
+                font-size: 20px;
+            }
+            input{
+                border:none;
+                margin-top: 8px;
+                margin-left: 20px;
+                width: 200px;
+                height: 20px;
+            }
+        }
+        .pass{
+            margin: -20px auto;
+            margin-bottom: 10px;
+            background: white;
+            height: 40px;
+            width: 270px;
+            border-bottom:2px solid #ddd;
+            i{
+                margin-left: 10px;
+                padding-right: 10px;
+                border-right: 1px solid #ddd;
+                font-style: normal;
+                font-size: 20px;
+            }
+            input{
+                border:none;
+                margin-top: 8px;
+                margin-left: 20px;
+                width: 200px;
+                height: 20px;
+            }
+        }
+        .forget{
+            &:hover{
+                text-decoration: underline;
+            }
+            display: block;
+            color: orangered;
+            text-align: right;
+            font-size: 14px;
+            margin-right: 50px;
+        }
+        .login{
+            letter-spacing: 3px;
+            font-size: 16px;
+            margin-left: 50px;
+            margin-top: 10px;
+            width: 270px;
+            height: 40px;
+            background: blue;
+            opacity: .7;
+            color: white;
+            text-align: center;
+            line-height: 40px;
+            border: none;
+        }
+        .p1{
+            margin-top: 5px;
+            text-align: center;
+            font-size: 14px;
+            em{
+                font-style: normal;
+                color: orangered;
+            }
+        }
+        .p2{
+            font-size: 14px;
+            margin-top: 25px;
+            margin-left: 50px;
+            em{
+                margin-bottom: 4px;
+                margin-left: 8px;
+                display:inline-block;
+                width: 150px;
+                height: 1px;
+                background:black;
+                opacity: .5;
+            }
+        }
+    }
+}
