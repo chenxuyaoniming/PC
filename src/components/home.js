@@ -4,8 +4,6 @@ import $ from 'jquery'
 import '../data/banner'
 import '../data/gblist'
 import '../font/iconfont.css'
-import G1 from './gg1';
-import Aside from './aside'
 
 
 class Home extends React.Component {
@@ -28,9 +26,7 @@ class Home extends React.Component {
     render() {
         return (
             <div>
-                <G1 />
-
-                <Aside />
+ 
                 <div id="gBanner-wrap">
                     <Link to="/" className='gBannerL'><img src="http://www.aozhoutrip.com/uploads/2018/0316/f8dda50e1e258891487c843d04007e39_1920x420.jpg" className="gBannerImg" /></Link>
                     <Link to="/" className='gBannerL'><img src="http://www.aozhoutrip.com/uploads/2018/0415/d84066c742ca387ab49f0d6322c45076_1920x420.jpg" className="gBannerImg" /></Link>
