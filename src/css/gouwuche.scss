@@ -1,0 +1,417 @@
+
+#zgouwu{
+    background: #efefef;
+}
+
+.zhenav{
+    width: 1200px;
+    height: 30px;
+    padding: 10px 0;
+    margin: auto;
+    
+    .zh_y{
+        font-size: 16px;
+        margin-right: 100px;
+        line-height: 30px;
+        span{
+            font-size: 12px;
+            color: #999;
+            margin-left: 5px;
+            
+        }
+    }
+    span{
+        margin-left: 50px;
+        color: white;
+        font-size: 20px;
+    }
+}
+.zsection{
+    position: relative;
+    width: 1200px;
+    min-height: 1000px;
+    margin: auto;
+    .zsection_left{
+        width: 805px;
+        height: 293px;
+        padding: 20px 30px;
+        background: white;
+        .zsection_h{
+            height: 50px;
+            padding: 10px 0;
+            
+            h2{
+                font-size: 16px;
+                font-weight: 900;
+            }
+            div{
+                font-size: 14px;
+                margin-top: 10px;
+                color: #999;
+            }
+        }
+        .zsection_ul{
+            height: 223px;
+            li{
+                height: 30px;
+                padding: 5px;
+                font-size: 14px;
+                line-height: 30px;
+                span{
+                    color: #999;
+                    margin-right: 5px;
+                }
+                b{
+                    font-weight: 100;
+                }
+                .zhjj1{
+                    b,.zxiaoji{
+                        color: red;
+                    }
+                }
+            }
+            .zsection_ta{
+                height: 73px;
+                .ztb_span{
+                    
+                    display: inline-block;
+                    height: 73px;
+                    float: left;
+                }
+                table{
+                     font-weight: 100;
+                     display: inline-block;
+                     border: 1px solid #aaaaaa;
+                     padding: 0;
+                     tr{
+                         padding: 0;
+                         th{
+                             width: 140px;
+                             height: 30px;
+                             text-align: center;
+                             line-height: 30px;
+                             font-weight:100;
+                         }
+                         th:nth-child(1){
+                             width:280px;
+                             height: 30px;
+                         }
+                     }
+                     tr:nth-of-type(1){
+                        
+                         th{
+                            border-bottom: 1px solid #999999;
+                             color: #999;
+                         }
+                     }
+                     .zhjj{
+                        
+                        padding: 0;
+                         div{
+                             border: 1px solid #999999;
+                             display: inline-block;
+                             height: 24px;
+                             margin: 3px;
+                             padding: 0;
+                             overflow: hidden;
+                             #ztb_in{
+                                 float: left;
+                                width: 32px;
+                                height: 25px;
+                                border: none;
+                                padding: 0;
+                                margin-top: -2px;
+                                border-left: 1px solid #999999;
+                                border-right: 1px solid #999999;
+                                text-align: center;
+                                
+                            }
+                            .zjia,.zjian{
+                                &:hover{
+                                    color: red;
+                                    cursor: pointer;
+                                }
+                                display: inline-block;
+                                width: 24px;height: 24px;
+                               //  border: 1px solid #999;
+                               text-align: center;
+                               line-height: 24px;
+                               float: left;
+                            }
+                            
+                            
+                         }
+                     }
+                     
+                     
+                }
+               
+            }
+        }
+    }
+    
+}
+// 侧边栏
+.zaside{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 280px;
+    height: 275px;
+    padding: 10px 20px 20px;
+    background: white;
+    border-top: 3px solid #777;
+    border-radius:3px; 
+    h2{
+        height: 24px;
+        text-align: center;
+        line-height: 24px;
+        font-size: 16px;
+    }
+    .zaside_1{
+        padding: 10px 0;
+        height: 145px;
+        border-bottom: 1px solid #999999;
+        h4{
+            font-size: 14px;
+            height: 19px;
+            line-height: 19px;
+        }
+        
+    }
+    .zaside_2{
+        padding-top: 5px;
+        li{
+            color: #999;
+            font-size: 12px;
+            line-height: 24px;
+            span{
+                display: inline-block;
+                float: left;
+                height: 24px;
+                width: 130px;
+                
+            }
+            b{
+                display: inline-block;
+                float: right;
+                height: 24px;
+                width: 130px;
+                font-weight: 100;
+                text-align: right;
+            }
+        }
+       
+    }
+}
+.zaside_3{
+    height: 90px;
+    padding-top: 5px;
+    line-height: 24px;
+    .zaside_31{
+        height: 24px;
+        padding: 0 10px;
+       
+        b{
+            font-weight: 100;
+        }
+        li{
+            display: inline-block;
+            width: 130px;
+            font-size: 12px;
+        }
+        li:nth-of-type(2){
+            float: right;
+            color: red;
+            text-align: right;
+        }
+    }
+    .zaside_32{
+        height: 24px;
+        padding: 15px 10px;
+        background:rgba(248, 7, 140, 0.133);
+        b{
+            font-weight: 100;
+        }
+        li{
+            display: inline-block;
+            width: 130px;
+            font-size: 16px;
+        }
+        li:nth-of-type(2){
+            float: right;
+            color: red;
+            text-align: right;
+        }
+    }
+}
+// 联系人
+.zliaxi{
+    width: 805px;
+    height: 291px;
+    padding: 20px 30px;
+    background: white;
+    margin: 20px 0;
+    font-size: 14px;
+    h1{
+        height: 21px;
+        padding: 10px 0;
+        font-size: 16px;
+        line-height: 21px;
+    }
+    .zlixia_1{
+        div{
+            height: 30px;
+            padding: 5px 0;
+            input{
+                width: 230px;
+                height: 26px;
+                padding: 0;
+                border: 1px solid #aaaaaa;
+            }
+            span{
+                display: inline-block;
+                width: 100px;
+                height: 30px;
+                line-height: 30px;
+                text-align: right;color: #999999;
+
+            }
+        }
+        .ztextarea{
+            height: 100px;
+            padding: 5px 0;
+            span{
+                float: left;
+            }
+            textarea{
+                width: 700px;
+                height: 100px;
+                padding: 0;
+            }
+        }
+    }
+}
+
+// 旅客信息
+.zlvke_1{
+
+width: 805px;
+background:white;
+padding: 20px 30px;
+
+h2{
+    height: 21px;
+    padding: 10px 0;
+    font-size: 16px;
+}
+.zlvkea{
+    width: 775px;
+    height: 244px;
+    background: #fcfcfc;
+    border: 1px solid #f5f7f7;
+    padding: 14px;
+    color: #999;
+    position: relative;
+    margin-bottom: 20px;
+    .zlv_1{
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        display: inline-block;
+        padding: 0 10px ;
+        height: 32px;
+        background: #ececee;
+        line-height: 32px;
+    }
+    .zlv_2{
+        height: 30px;
+        padding: 5px 0;
+        margin-left:100px; 
+        span{
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            text-align: right;
+            float: left;
+            line-height: 30px;
+            b{
+                font-weight: 100;
+                color: red;
+            }
+        }
+        input{
+            height: 28px;
+            width: 230px;
+            padding: 0;
+            float: left;
+            
+        }
+    }
+    .zlv_3{
+        height: 30px;
+        padding: 5px 0;
+        margin-left:100px; 
+        line-height: 30px;
+        span{
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            text-align: right;
+            float: left;
+            line-height: 30px;
+            b{
+                font-weight: 100;
+                color: red;
+            }
+        }
+        input{
+            margin-left: 50px;
+        }
+    }
+    .zlv_4{
+        height: 30px;
+        padding: 5px 0;
+        margin-left:100px; 
+        line-height: 30px;
+        span{
+            display: inline-block;
+            width: 100px;
+            height: 30px;
+            text-align: right;
+            float: left;
+            line-height: 30px;
+            b{
+                font-weight: 100;
+                color: red;
+            }
+        }
+        select{
+            height: 28px;
+            width: 230px;
+            padding: 0;
+            float: left;
+        }
+    }
+    .zlv_5{
+        height: 30px;
+        padding: 5px 0;
+        margin-left:100px; 
+        line-height: 30px;
+        overflow: hidden;
+        #zcucun{
+            height: 20px;
+            width: 20px;
+            margin-left:100px;
+            margin-top: 5px;
+            float: left;
+            
+        }
+        span{
+            display: inline-block;
+            height: 30px;
+            line-height: 30px;
+        }
+    }
+}
+}

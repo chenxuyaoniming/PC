@@ -10,6 +10,7 @@ import Login from './components/login'
 import Register from './components/register'
 import About  from './components/about'
 import List from './components/list'
+import Gouwuche from './components/gouwuche'
 import './css/home.scss'
 import './css/index.scss'
 import './css/about.scss'
@@ -20,6 +21,7 @@ import './css/register.scss'
 import './css/retrieve.scss'
 import './css/app.scss'
 import './css/list.scss'
+import './css/gouwuche.scss'
 
 ReactDOM.render(<Router history={hashHistory}>
     <Route path='/' component={App}>
@@ -30,6 +32,7 @@ ReactDOM.render(<Router history={hashHistory}>
         <Route path='/about/:id' component={About}></Route>
         <Route path='/register' component={Register}></Route>
         <Route path='/retrieve' component={Retrieve}></Route>
+        <Route path='/gouwuche' component={Gouwuche}></Route>
     </Route>
     
 </Router>, document.getElementById('root'));
