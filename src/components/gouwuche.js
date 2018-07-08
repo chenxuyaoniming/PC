@@ -6,6 +6,42 @@ import $ from 'jquery';
 class Gouwuche extends Component{
     constructor(porps){
         super(porps)
+        this.state={
+            jing:''
+        }
+    }
+    componentDidMount(){
+        
+        var _this=this;
+        var jg=$('.zdanjia').html()
+        _this.setState({jing:jg})
+        $(function(){
+            var i=1;
+            var arr='';
+            $('#ztb_in').val(i)
+            $('.zjian').click(function(){
+                
+                i++;
+                $('#ztb_in').val(i)
+                $('.zxiaoji').html($('.zdanjia').html()*i)
+                arr=$('.zxiaoji').html()
+                // console.log(arr)
+                _this.setState({jing:arr})
+            })
+            $('.zjia').click(function(){
+                if(i>1){
+                    i--;
+                    $('#ztb_in').val(i)
+                    $('.zxiaoji').html($('.zdanjia').html()*i)
+                    arr=$('.zxiaoji').html()
+                    
+                    _this.setState({jing:arr})
+                }
+            })
+            
+          
+        })
+        
     }
     render(){
         return(
@@ -37,7 +73,7 @@ class Gouwuche extends Component{
                                     </tr>
                                     <tr>
                                         <th>成人</th>
-                                        <th>4380</th>
+                                        <th><span className="zdanjia">4380</span></th>
                                         <th className="zhjj"><div><span className="zjia">-</span><input type="text" id="ztb_in"/><span className="zjian">+</span></div></th>
                                         <th className="zhjj1"><b>￥</b><span className="zxiaoji">4380</span></th>
                                     </tr>
@@ -62,12 +98,12 @@ class Gouwuche extends Component{
                         <div  className="zaside_3">
                             <div className="zaside_31">
                                 <li>预定总额</li>
-                                <li><b>￥</b><span>4380</span></li>
+                                <li><b>￥</b><span>{this.state.jing}</span></li>
                             </div>
                             
                             <div className="zaside_32">
                                 <li>应付总额</li>
-                                <li><b>￥</b><span>4380</span></li>
+                                <li><b>￥</b><span>{this.state.jing}</span></li>
                             </div>
                         </div>
                     </div>
@@ -140,6 +176,40 @@ class Gouwuche extends Component{
         )
     }
 }
-
+// 侧边栏
+$(function(){
+    $(window).scroll(function(){
+        var stop=$("html,body").scrollTop();
+        // console.log(stop)
+        if(stop>250){
+           
+            $('.zaside').css({"position":"absolute","top":stop-250});
+            // console.log(stop)
+        }else{
+            $('.zaside').css({"position":"absolute","top":0});
+        }
+    })
+})
+// 加减结算
+// $(function(){
+//     var i=1;
+//     $('#ztb_in').val(i)
+//     $('.zjian').click(function(){
+        
+//         i++;
+//         $('#ztb_in').val(i)
+//         $('.zxiaoji').html($('.zdanjia').html()*i)
+//     })
+//     $('.zjia').click(function(){
+//         if(i>1){
+//             i--;
+//             $('#ztb_in').val(i)
+//             $('.zxiaoji').html($('.zdanjia').html()*i)
+//         }
+//     })
+    
+//     console.log($('.zxiaoji').html())
+    
+// })
 
 export default Gouwuche;
