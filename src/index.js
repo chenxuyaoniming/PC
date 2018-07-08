@@ -33,11 +33,7 @@ ReactDOM.render(<Router history={hashHistory}>
         <Route path='/about/:id' component={About}></Route>
         <Route path='/register' component={Register}></Route>
         <Route path='/retrieve' component={Retrieve}></Route>
-<<<<<<< HEAD
-        <Route path='/gouwuche' component={Gouwuche}></Route>
-=======
         <Route path='/geren' component={Geren}></Route>
->>>>>>> afe467ee7d5e09721a1d3abb84b98546458eb9de
     </Route>
     
 </Router>, document.getElementById('root'));
