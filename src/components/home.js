@@ -167,7 +167,7 @@ class Home extends React.Component {
                         </header>
                         <section>
                             <div className='g-se-list'>
-                                    <Link to='/list'>
+                                    <Link to='/list/1'>
                                         <div>
                                             <img src="http://www.aozhoutrip.com/uploads/2017/1103/23f7c27f41337b4667a60a871f513727_285x154.jpg" />
                                         </div>
@@ -213,7 +213,6 @@ class Home extends React.Component {
                     $("#g-list-left").append($oD)
                 })
                 $('.gBannerList').hover(function(){
-                    console.log($('.gListBox'))
                     $(this).addClass('BannerList')
                         .siblings().removeClass('BannerList')
                     var index = $(this).index()
