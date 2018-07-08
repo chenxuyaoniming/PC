@@ -6,6 +6,7 @@ import G1 from './components/gg1';
 import Aside from './components/aside'
 import Store from './redux/store.js'
 import Action from './redux/action.js'
+import {hashHistory} from 'react-router'
 class App extends Component {
   constructor(props){
     super(props)
@@ -22,9 +23,20 @@ class App extends Component {
   componentWillMount(){
     Store.subscribe(this.change.bind(this))
   }
+  reset(){
+    Store.dispatch(Action(''))
+    hashHistory('/login')
+  }
   ret(){
     if(this.state.user){
-      return (<span>欢迎您：<b>{this.state.user}</b></span>)
+      return (  
+                <span>
+                       <span>欢迎您：<b>{this.state.user}</b></span>
+                       <span onClick={this.reset.bind(this)}>退出</span>
+                </span>
+             
+              
+              )
     }else{
       return (  
                <span>
