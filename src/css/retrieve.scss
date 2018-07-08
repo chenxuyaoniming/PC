@@ -136,6 +136,251 @@
                     font-size: 14px;
                 }
             }
+            
         }
+        .main-box1{
+            font-size: 14px;
+            .div1{
+                margin:50px 0 10px 200px;
+                .bt-left{
+                    line-height: 30px;
+                    text-align: right;
+                    // background: white;
+                    height: 30px;
+                    display: inline-block;
+                    width: 90px;
+                }
+                input{
+                    text-indent: 3px;
+                    padding: 0;
+                    border: none;
+                    margin-left: 5px;
+                    width: 230px;
+                    height: 30px;
+                    line-height: 30px;
+                }
+            }
+            .div2{
+               margin-left: 200px;
+                .bt-left{
+                    line-height: 30px;
+                    text-align: right;
+                    float: left;
+                    height: 30px;
+                    display: inline-block;
+                    width: 90px;
+                }
+                input{
+                    text-indent: 3px;
+                    float: left;
+                    padding: 0;
+                    border: none;
+                    margin-left: 5px;
+                    width: 105px;
+                    height: 30px;
+                    line-height: 30px;
+                }
+                .yzmm{
+                    cursor: pointer;
+                    float: left;
+                    display: inline-block;
+                    width: 114px;
+                    height: 28px;
+                    border: 1px solid black;
+                    margin-left: 10px;
+                }
+                .replace{
+                    font-size: 14px;
+                    color: orangered;
+                    margin-left: 5px;
+                    cursor: pointer;
+                    text-align: center;
+                    line-height: 30px;
+                }
+            }
+            .next{
+                cursor: pointer;
+                margin-top: 10px;
+                color: white;
+                float: left;
+                width: 230px;
+                height: 40px;
+                border: none;
+                background: blue;
+                opacity: .8;
+                text-align: center;
+                line-height: 40px;
+                letter-spacing: 3px;
+                font-size: 16px;
+                margin-left:295px;
+            }
+        }
+        .main-box2{
+            display: none;
+            font-size: 14px;
+            .div1{
+                margin:50px 0 10px 200px;
+                .bt-left{
+                    line-height: 30px;
+                    text-align: right;
+                    height: 30px;
+                    display: inline-block;
+                    width: 90px;
+                }
+                .main-box2-1{
+                    line-height: 30px;
+                    vertical-align: middle;
+                    margin-left: 5px;
+                    display: inline-block;
+                    width: 230px;
+                    height: 30px;
+                }
+            }
+            .div3{
+                margin-bottom: 10px;
+                margin-left:200px;
+                .bt-left{
+                    line-height: 30px;
+                    text-align: right;
+                    // float: left;
+                    height: 30px;
+                    display: inline-block;
+                    width: 90px;
+                }
+                input{
+                    text-indent: 3px;
+                    // float: left;
+                    padding: 0;
+                    border: none;
+                    margin-left: 5px;
+                    width: 105px;
+                    height: 30px;
+                    line-height: 30px;
+                }
+                .yzmm{
+                    cursor: pointer;
+                    background: white;
+                    text-align: center;
+                    line-height: 28px;
+                    // float: left;
+                    display: inline-block;
+                    width: 114px;
+                    height: 28px;
+                    border: 1px solid black;
+                    margin-left: 10px;
+                }
+            }
+            .div4{
+                margin-bottom: 10px;
+                margin-left:200px;
+                .bt-left{
+                    line-height: 30px;
+                    text-align: right;
+                    // float: left;
+                    height: 30px;
+                    display: inline-block;
+                    width: 90px;
+                }
+                input{
+                    text-indent: 3px;
+                    // float: left;
+                    padding: 0;
+                    border: none;
+                    margin-left: 5px;
+                    width: 230px;
+                    height: 30px;
+                    line-height: 30px;
+                }
+            }
+            .div5{
+                margin-bottom: 10px;
+                margin-left:200px;
+                .bt-left{
+                    line-height: 30px;
+                    text-align: right;
+                    // float: left;
+                    height: 30px;
+                    display: inline-block;
+                    width: 90px;
+                }
+                input{
+                    text-indent: 3px;
+                    // float: left;
+                    padding: 0;
+                    border: none;
+                    margin-left: 5px;
+                    width: 230px;
+                    height: 30px;
+                    line-height: 30px;
+                }
+            }
+            .next2{
+                cursor: pointer;
+                margin-top: 10px;
+                color: white;
+                // float: left;
+                width: 230px;
+                height: 40px;
+                border: none;
+                background: blue;
+                opacity: .8;
+                text-align: center;
+                line-height: 40px;
+                letter-spacing: 3px;
+                font-size: 16px;
+                margin-left:295px;
+            }
+        }
+        .main-box3{
+            display: none;
+            position: relative;
+            width:200px;
+            height: 200px;
+            // background: deeppink;
+            margin: 50px auto;
+            div{
+                position:absolute;
+                border-radius: 5px;
+                top: -100px;
+                width: 0;
+                height: 0;
+                border-width: 100px;
+                border-color: transparent transparent rgb(41, 236, 6) transparent;
+                border-style: solid;
+                i{
+                    position: absolute;
+                    left: -27px;
+                    color: white;
+                    top: 30px;
+                    font-size: 50px;
+                }
+
+            }
+            span{
+                left: 30%;
+                position: absolute;
+                bottom:50px;
+                color:black;
+                font-size: 18px;
+
+            }
+            button{
+                cursor: pointer;
+                position: absolute;
+                background: deeppink;
+                border: none;
+                width: 100px;
+                height: 30px;
+                text-align: center;
+                line-height: 30px;
+                color: white;
+                border-radius: 5px;
+                font-size: 18px;
+                letter-spacing: 2px;
+                bottom: 10px;
+                left:25%;
+            }
+        }
+       
     }
 }
