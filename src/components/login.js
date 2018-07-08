@@ -4,6 +4,8 @@ import { Link } from 'react-router';
 import bgimg from '../img/bg1.jpg'
 import {hashHistory} from 'react-router'
 import $ from 'jquery'
+import action from '../redux/action'
+import store from '../redux/store'
 const homeimg={
     backgroundSize:'100% 100%',
     backgroundImage:'url('+bgimg+')'
@@ -11,7 +13,18 @@ const homeimg={
 class Login extends React.Component{
     constructor(props){
         super(props)
+        this.state={
+            arr:store.getState()
+        }
+        this.onchanges=this.onchanges.bind(this)
     }
+    onchanges(){
+		this.setState({arr:store.getState()})
+	}
+	componentDidMount(){
+//		监听
+		store.subscribe(this.onchanges)
+	}
     login(){
         var phonenum=this.refs.username.value
         var pass=this.refs.password.value
@@ -23,6 +36,8 @@ class Login extends React.Component{
             success:function(data){
                 if(data==1){
                     alert('登录成功')
+                    store.dispatch(action(phonenum))
+                    console.log(store.getState())
                     hashHistory.push('/home')
                 }else{
                     alert('用户名不存在或密码错误')

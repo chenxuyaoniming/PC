@@ -46,7 +46,7 @@ class Register extends React.Component{
                         console.log(data)
                         if(data==1){
                             alert('注册成功')
-                            hashHistory.push('/login')
+                            hashHistory.push('/home')
                             store.dispatch(action(phoneNumber))
                             console.log(store.getState())
                         }else if(data==2){
