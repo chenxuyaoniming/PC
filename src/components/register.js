@@ -11,43 +11,7 @@ const homeimg={
 class Register extends React.Component{
     constructor(props){
         super(props)
-        // this.state={
-        //     telError:null,
-        //     passError:null
-        // }
     }
-
-    //判断手机号
-    // telCheck(event){
-    //     this.tel=event.target.value
-    //     console.log(this.tel)
-    //     var reg=/^1[34578]\d{9}$/
-    //     if(reg.test(this.tel)==false){
-    //         this.setState({
-    //             telError:'请输入正确的手机号'
-    //         })
-    //     }else{
-    //         this.setState({
-    //             telError:''
-    //         })
-    //     }
-    // }
-   
-
-    //判断密码
-    // passCheck(event){
-    //     this.pass=event.target.value
-    //     var reg=/^\w{6,20}$/;
-    //     if(reg.test(this.pass)==false){
-    //         this.setState({
-    //             passError:'密码为6-20位数字字母下划线'
-    //         })
-    //     }else{
-    //         this.setState({
-    //             passError:''
-    //         })
-    //     }
-    // }
     register(){
             var phoneNumber=this.refs.phoneNumber.value;
             var yzmm=this.refs.yzmm.value;
