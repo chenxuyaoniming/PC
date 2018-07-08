@@ -24,7 +24,7 @@ class App extends Component {
   }
   ret(){
     if(this.state.user){
-      return (<span>欢迎您：<b>this.state.user[0]</b></span>)
+      return (<span>欢迎您：<b>{this.state.user}</b></span>)
     }else{
       return (  
                <span>
