@@ -15,7 +15,7 @@ class App extends Component {
       user:Store.getState()
     }
   }
-  change(){
+  change(a){
     this.setState({user:Store.getState()})
   }
 
@@ -23,16 +23,17 @@ class App extends Component {
   componentWillMount(){
     Store.subscribe(this.change.bind(this))
   }
+
   reset(){
     Store.dispatch(Action(''))
-    hashHistory('/login')
   }
   ret(){
+    console.log(1111)
     if(this.state.user){
       return (  
                 <span>
                        <span>欢迎您：<b>{this.state.user}</b></span>
-                       <span onClick={this.reset.bind(this)}>退出</span>
+                       <span onClick={this.reset.bind(this)}><Link to="/login">退出</Link></span>
                 </span>
              
               
