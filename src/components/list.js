@@ -17,7 +17,6 @@ class List extends React.Component{
         $.ajax({
             url:'http://datainfo.duapp.com/shopdata/getGoods.php',
             type:'get',
-            // data:{'cat_id':id},
             dataType:'jsonp',
             success:function(data){
                 _this.setState({
@@ -35,6 +34,7 @@ class List extends React.Component{
             url:'http://datainfo.duapp.com/shopdata/getGoods.php',
             type:'get',
             dataType:'jsonp',
+            async:false,
             success:function(data){
                 _this.setState({
                     mdd:data

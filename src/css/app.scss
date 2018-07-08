@@ -25,11 +25,19 @@
     float:right;
 }
 .zheader_s span{
-    margin-right: 20px;
+    margin-right: 10px;
     padding:0 5px;
+    font-size: 12px;
+    &:nth-of-type(1){
+        margin-right: 10px;
+    }
+}
+.icon-dingdan , .icon-fenqu{
+    font-size: 14px;
+    color: #666;
 }
 .zspan1{
-    color:royalblue;
+    color:#4ccc5a;
 }
 .zspan1:hover{
     color: orange;
@@ -178,14 +186,16 @@
         float: left;
         height: 75px;
         padding-top: 10px;
+        font-size: 12px;
+        font-weight: bold;
         width: 230px;
         margin-left: 100px;
         text-indent:24px; 
-        color: #333333;
-        
-        background:url(../img/zh1.jpg)no-repeat center/cover;
-        line-height: 30px;
+        color: #666;
+        background: url(http://www.aozhoutrip.com/usertpl/xiao_st16195_no200_index/images/top-telephone.png) no-repeat right top;
+        line-height: 25px;
         .zkefu_1{
+            font-size: 16px;
             color:orangered;
             font-size: 20px; 
         }
