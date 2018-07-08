@@ -3,6 +3,8 @@ import $ from 'jquery'
 import { Link } from 'react-router';
 import bgimg from '../img/bg1.jpg'  
 import { hashHistory } from 'react-router'
+import action from '../redux/action'
+import store from '../redux/store'
 // import GVerify from './gVerify.js'
 const homeimg={
     backgroundSize:'100% 100%',
@@ -11,7 +13,18 @@ const homeimg={
 class Register extends React.Component{
     constructor(props){
         super(props)
+        this.state={
+            arr:store.getState()
+        }
+        this.onchanges=this.onchanges.bind(this)
     }
+    onchanges(){
+		this.setState({arr:store.getState()})
+	}
+	componentDidMount(){
+//		监听
+		store.subscribe(this.onchanges)
+	}
     register(){
             var phoneNumber=this.refs.phoneNumber.value;
             var yzmm=this.refs.yzmm.value;
@@ -34,6 +47,8 @@ class Register extends React.Component{
                         if(data==1){
                             alert('注册成功')
                             hashHistory.push('/login')
+                            store.dispatch(action(phoneNumber))
+                            console.log(store.getState())
                         }else if(data==2){
                             alert('手机验证码错误')
                         }else{
