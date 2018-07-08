@@ -34,6 +34,7 @@ ReactDOM.render(<Router history={hashHistory}>
         <Route path='/register' component={Register}></Route>
         <Route path='/retrieve' component={Retrieve}></Route>
         <Route path='/geren' component={Geren}></Route>
+        <Route path='/gouwuche' component={Gouwuche}></Route>
     </Route>
     
 </Router>, document.getElementById('root'));
