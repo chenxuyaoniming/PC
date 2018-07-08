@@ -6,6 +6,14 @@ import G1 from './components/gg1';
 import Aside from './components/aside'
 
 class App extends Component {
+  constructor(props){
+    super(props)
+    this.state={
+      goods:[]
+    }
+  }
+
+
   render() {
     return (
 
@@ -27,15 +35,28 @@ class App extends Component {
         <div className="zheader">
           <div className="zheader1">
             <div className="zimg">
-              <img src="http://www.aozhoutrip.com/uploads/2018/0316/4679481b40e34a6a15cc086ac007e1c8_298x85.jpg"/>
+              <Link to="/home">
+                   <img         src="http://www.aozhoutrip.com/uploads/2018/0316/4679481b40e34a6a15cc086ac007e1c8_298x85.jpg"/>
+              </Link>
+             
             </div>
             <div className="zsou">
               <div className="zxia">
                 <span className="zxiaspan">全部<div className="zsli"><li>热门路线</li><li>签证</li><li>景点</li></div></span>
-                <input type="text" placeholder="输入目的地，酒店，攻略"/>
+                <input type="text" placeholder="输入目的地，酒店，攻略" id='search'/>
                 <span className="zxiaspan1">搜索</span>
                 <div></div>
               </div>
+              <ul id='app-list'>
+                {
+                  this.state.goods.map(function(item,i){
+                    return(
+                      <li key={i}>{item.goods_name
+                      } </li>
+                    )
+                  })
+                }
+              </ul>
               <div className="zrensou">
                 <span className="zres1">热门搜索：</span>
                 <span className="zres2">九寨沟旅游</span>
@@ -53,14 +74,14 @@ class App extends Component {
           <div id="znav">
             <div className="global_tit">全部旅游产品分类</div>
             <ul className="znul">
-              <li><Link className="znav_a zleft" to="">旅行社</Link></li>
-              <li><Link className="znav_a"  to="">出境游</Link></li>
-              <li><Link className="znav_a"  to="">国内游</Link></li>
-              <li><Link className="znav_a jian"  to="">海岛游<i className="jian_1">荐</i></Link></li>
-              <li><Link className="znav_a"  to="">暑期嗨皮档</Link></li>
-              <li><Link className="znav_a"  to="">热门路线</Link></li>
-              <li><Link className="znav_a jian_a"  to="">签证<i className="jian_2">热</i></Link></li>
-              <li><Link className="znav_a"  to="">周边游</Link></li>
+              <li><Link className="znav_a zleft" to="/list/45">旅行社</Link></li>
+              <li><Link className="znav_a"  to="/list/62">出境游</Link></li>
+              <li><Link className="znav_a"  to="/list/45">国内游</Link></li>
+              <li><Link className="znav_a jian"  to="/list/62">海岛游<i className="jian_1">荐</i></Link></li>
+              <li><Link className="znav_a"  to="/list/45">暑期嗨皮档</Link></li>
+              <li><Link className="znav_a"  to="/list/45">热门路线</Link></li>
+              <li><Link className="znav_a jian_a"  to="/list/45">签证<i className="jian_2">热</i></Link></li>
+              <li><Link className="znav_a"  to="/list/45">周边游</Link></li>
             </ul>
           </div>
         </div>
@@ -192,22 +213,56 @@ class App extends Component {
       
         )
       }
+      componentDidMount(){
+        let _this = this
+        $(function(){
+          $('.zspan3').mouseover(function(){
+            $('#zdao').stop().slideDown(200);
+          })
+          $('.zspan3').mouseout(function(){
+            $('#zdao').stop().slideUp(300);
+          })
+          $('.zxiaspan').mousemove(function(){
+            $('.zsli').stop().slideDown(100);
+          })
+          $('.zxiaspan').mouseout(function(){
+            $('.zsli').stop().slideUp(300);
+          })
+      
+          /////////搜索/////////////////////
+      
+          $('#search').bind('input',function(){
+              $('#app-list').show()
+              var txt = $(this).val()
+              if(txt == ''){
+                $('#app-list').hide()
+              }
+              $.ajax({
+                url:'http://h6.duchengjiu.top/shop/api_goods.php',
+                type:'get',
+                data:{'search_text':txt},
+                async:false,
+                success:function(data){
+                  var data2 = [{'goods_name':'抱歉未找到商品'}]
+                  if(data.data.length>0){
+                    _this.setState({
+                      goods:data.data
+                    })
+                    console.log(data)
+                  }else{
+                    _this.setState({
+                      goods:data2
+                    })
+                  }
+                
+                }
+              })
+          })
+        })
+      }
 
   }
-  $(function(){
-    $('.zspan3').mouseover(function(){
-      $('#zdao').stop().slideDown(200);
-    })
-    $('.zspan3').mouseout(function(){
-      $('#zdao').stop().slideUp(300);
-    })
-    $('.zxiaspan').mousemove(function(){
-      $('.zsli').stop().slideDown(100);
-    })
-    $('.zxiaspan').mouseout(function(){
-      $('.zsli').stop().slideUp(300);
-    })
-  })
+
 class Xiaoguang extends React.Component{
   constructor(props){
     super(props)

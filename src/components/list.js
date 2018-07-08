@@ -10,20 +10,37 @@ class List extends React.Component{
             mdd:[]
         }
     }
+    componentWillReceiveProps(a){
+        let _this = this;
+        let id = a.params.id
+        console.log(id)
+        $.ajax({
+            url:'http://datainfo.duapp.com/shopdata/getGoods.php',
+            type:'get',
+            // data:{'cat_id':id},
+            dataType:'jsonp',
+            success:function(data){
+                _this.setState({
+                    mdd:data
+                })
+                console.log(data)
+            }
+        })
+    }
     componentDidMount(){
-        let _this = this
-       $.ajax({
-           url:'http://www.list.com/api',
-           type:'get',
-           dataType:'json',
-           async:true,
-           success:function(data){
-               _this.setState({
-                   mdd:data.togou
-               })
-               console.log(data.togou[0])
-           }
-       })
+        let _this = this;
+        let id = this.props.params.id
+        console.log(id)
+        $.ajax({
+            url:'http://datainfo.duapp.com/shopdata/getGoods.php',
+            type:'get',
+            dataType:'jsonp',
+            success:function(data){
+                _this.setState({
+                    mdd:data
+                })
+            }
+        })
     }
     render(){
         return(
@@ -135,52 +152,40 @@ class List extends React.Component{
                         {/* 旅游项目 */}
 
                         <div id='gList-list-con'>
-                            <div>
-                                <img src="http://www.aozhoutrip.com/uploads/2018/0329/f6bb269e4ccc967c508312043f16a56b.jpg" alt=""/>
-                                <div>
-                                    <p>【惊喜芽庄五天四万】</p>
-                                    <div>
-                                        <p>  <i className="icon iconfont icon-importedlayers"></i>郑州出发</p>
-                                        <p>团期 : <span>电讯</span></p>
-                                        <p>行程 : <span>4天</span></p>
-                                    </div>
-                                </div>
-                                <em>
-                                    <p>
-                                        电讯
-                                    </p>
-                                    <div>
-                                        <span>满意度</span>
-                                        <strong>
-                                            <i>100</i>人已购买
-                                            <i>0</i>人已购买
-                                        </strong>
-                                    </div>
-                                </em>
-                            </div>
-                            <div>
-                                <img src="http://www.aozhoutrip.com/uploads/2018/0329/f6bb269e4ccc967c508312043f16a56b.jpg" alt=""/>
-                                <div>
-                                    <p>【惊喜芽庄五天四万】</p>
-                                    <div>
-                                        <p>  <i className="icon iconfont icon-importedlayers"></i>郑州出发</p>
-                                        <p>团期 : <span>电讯</span></p>
-                                        <p>行程 : <span>4天</span></p>
-                                    </div>
-                                </div>
-                                <em>
-                                    <p>
-                                        电讯
-                                    </p>
-                                    <div>
-                                        <span>满意度</span>
-                                        <strong>
-                                            <i>100</i>人已购买
-                                            <i>0</i>人已购买
-                                        </strong>
-                                    </div>
-                                </em>
-                            </div>
+                            {
+                                this.state.mdd.map(function(item,i){
+                                    return(
+                                        <div key={i}>
+                                            <Link to={"about/"+item.goodsID}>
+                                                <img src={item.goodsListImg} alt=""/>
+                                                <div>
+                                                    <p>【{item.goodsName}】</p>
+                                                    <div>
+                                                        <p>  <i className="icon iconfont icon-importedlayers"></i>郑州出发</p>
+                                                        <p>价格 : <span>￥{item.price}</span></p>
+                                                        <p>行程 : <span>4天</span></p>
+                                                    </div>
+                                                </div>
+                                                <em>
+                                                    <p>
+                                                        ￥{item.price}
+                                                    </p>
+                                                    <div>
+                                                        <span>满意度</span>
+                                                        <strong>
+                                                            <i>{item.discount}</i>人已购买
+                                                            <i>0</i>人已购买
+                                                        </strong>
+                                                    </div>
+                                                </em>
+                                            </Link>
+                                          
+                                        </div>
+                                    )
+                                })
+                            }
+                           
+              
                         </div>
 
                     </div>

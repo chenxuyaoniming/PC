@@ -496,3 +496,33 @@
         }
     }
 }
+
+#app-list{
+    position: absolute;
+    width: 350px;
+    background: #fff;
+    border: 1px solid #ccc;
+    left: 500px;
+    top: 115px;
+    padding: 10px;
+    z-index: 888;
+    display: none;
+    >li{
+        height: 38px;
+        text-indent: 5px;
+        line-height: 38px;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+        width: 100%;
+        overflow: hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+        font-size: 14px;
+        color: #666;
+        cursor: pointer;
+        &:hover{
+            color: #f40;
+            text-decoration: underline;
+        }
+    }
+}
