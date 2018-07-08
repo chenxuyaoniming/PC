@@ -4,15 +4,43 @@ import './font/iconfont.css';
 import $ from 'jquery';
 import G1 from './components/gg1';
 import Aside from './components/aside'
-
+import Store from './redux/store.js'
+import Action from './redux/action.js'
 class App extends Component {
   constructor(props){
     super(props)
     this.state={
-      goods:[]
+      goods:[],
+      user:Store.getState()
     }
   }
+  change(){
+    this.setState({user:Store.getState()})
+  }
 
+
+  componentWillMount(){
+    Store.subscribe(this.change.bind(this))
+  }
+  ret(){
+    if(this.state.user){
+      return (<span>欢迎您：<b>this.state.user[0]</b></span>)
+    }else{
+      return (  
+               <span>
+                    <span>
+                      <Link to='/login' className="zspan1">登陆
+                      </Link>
+                    </span>
+                    <span>
+                      <Link to='/register'className="zspan2">免费注册
+                      </Link>
+                    </span>
+               </span>
+              
+              )
+        }
+  }
 
   render() {
     return (
@@ -21,13 +49,41 @@ class App extends Component {
           <G1 />
 
           <Aside />
+
         <div className="Zapp1">
           <div className="Zheader">
             <div className="zheader_p">
               <span>您好！欢迎光临河南康辉国际旅行社有限责任公司</span>
             </div>
             <div className="zheader_s">
-                <span><Link to='/login' className="zspan1">登陆</Link></span><span ><Link to='/register'className="zspan2">免费注册</Link></span><span><Link to=''><i className="icon iconfont icon-dingdan">订单查询</i></Link></span><span className="zspan3"><i className="icon iconfont icon-fenqu">网站导航</i><div id="zdao"><li>出国游</li><li>国内游</li><li>海岛游</li><li>私人订制</li><li>签证</li><li>游记攻略</li><li>景点</li><li>热门路线</li><li>嗨皮暑期档</li><li>周边游</li></div></span>
+                {
+                  this.ret()
+                }
+                
+                <span>
+                  <Link to=''>
+                    <i className="icon iconfont icon-dingdan">
+                    订单查询
+                    </i>
+                  </Link>
+                </span>
+                <span className="zspan3">
+                    <i className="icon iconfont icon-fenqu">
+                    网站导航
+                    </i>
+                  <div id="zdao">
+                    <li>出国游</li>
+                    <li>国内游</li>
+                    <li>海岛游</li>
+                    <li>私人订制</li>
+                    <li>签证</li>
+                    <li>游记攻略</li>
+                    <li>景点</li>
+                    <li>热门路线</li>
+                    <li>嗨皮暑期档</li>
+                    <li>周边游</li>
+                  </div>
+                </span>
             </div>
           </div>
         </div>
@@ -217,24 +273,27 @@ class App extends Component {
         let _this = this
         $(function(){
           $('.zspan3').mouseover(function(){
-            $('#zdao').stop().slideDown(200);
+            $('#zdao').stop().show();
           })
           $('.zspan3').mouseout(function(){
-            $('#zdao').stop().slideUp(300);
+            $('#zdao').stop().hide();
           })
           $('.zxiaspan').mousemove(function(){
-            $('.zsli').stop().slideDown(100);
+            $('.zsli').stop().show();
           })
           $('.zxiaspan').mouseout(function(){
-            $('.zsli').stop().slideUp(300);
+            $('.zsli').stop().hide();
           })
       
           /////////搜索/////////////////////
-      
+          $('#search').bind('blur',function(){
+            $(this).val("")
+             $('#app-list').hide()
+          })
           $('#search').bind('input',function(){
               $('#app-list').show()
               var txt = $(this).val()
-              if(txt == ''){
+              if(txt === ''){
                 $('#app-list').hide()
               }
               $.ajax({
