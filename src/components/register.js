@@ -49,9 +49,6 @@ class Register extends React.Component{
     //     }
     // }
     register(){
-        var id=$(this).attr('data-id')
-        console.log(id)
-        if(id==1){
             var phoneNumber=this.refs.phoneNumber.value;
             var yzmm=this.refs.yzmm.value;
             var yzm=this.refs.yzm.value;
@@ -81,7 +78,9 @@ class Register extends React.Component{
                     }
                 })
             }
-        }else{
+        
+    }
+    email(){
             var email=this.refs.email.value
             var emailpass = this.refs.emailpass.value
             var emailpass1=this.refs.emailpass1.value
@@ -103,7 +102,6 @@ class Register extends React.Component{
                     }
                 })
             }
-        }
     }
     send(){
         var reg=/^1[34578]\d{9}$/
@@ -142,14 +140,14 @@ class Register extends React.Component{
                                 <div className='div3'><span className='bt-left'>动态密码</span><input ref='yzm' type='text'/><span onClick={this.send.bind(this)} className='yzmm'>获取验证码</span></div>
                                 <div className='div4'><span className='bt-left'>密码</span><input ref='pass' type='text' placeholder='请输入登录密码' /></div>
                                 <div className='div5'><span className='bt-left'>确认密码</span><input ref='pass1' type='text' placeholder='请再次输入登录密码' /></div>
-                                <button onClick={this.register.bind(this)} data-id='1' className='register'>立即注册</button>
+                                <button onClick={this.register.bind(this)} className='register'>立即注册</button>
                             </div>
                             <div className='email'>
                                 <div className='div1'><span className='bt-left'>登录账号</span><input type='text' ref='email' placeholder='请输入邮箱账号' /></div>
                                 <div className='div2'><span className='bt-left'>验证码</span><input type='text' className='code_input' /><span id='v_conta' className='yzmm'></span></div>
                                 <div className='div4'><span className='bt-left'>密码</span><input type='text'ref='emailpass' placeholder='请输入登录密码' /></div>
                                 <div className='div5'><span className='bt-left'>确认密码</span><input type='text' ref='emailpass1' placeholder='请再次输入登录密码' /></div>
-                                <button data-id='2' onClick={this.register.bind(this)} className='register'>立即注册</button>
+                                <button onClick={this.email.bind(this)} className='register'>立即注册</button>
                             </div>
                     </div>
                     <div className='M-box-right'>
@@ -174,34 +172,6 @@ componentDidMount(){
                 $('.phone').css('display','none')
                 $('.email').css('display','block')
             })
-            // var verifyCode = new GVerify('v_container');            
-            // var emailCode = new GVerify('v_conta');            
-            // $('.register').click(function(){
-            //     var res=verifyCode.validate(document.getElementsByClassName('code_input').value);
-            //     if(res){
-            //         alert('验证正确')
-            //     }else{
-            //         alert('不行')
-            //     }
-                // console.log($(this).attr('data-id'))
-                // var id=$(this).attr('data-id')
-                // if(id==1){
-                //     var res=verifyCode.validate(document.getElementsByClassName('code_input').value);
-                //  if(res){
-                //     alert('图形验证正确')
-                //     }else{
-                //      alert('图形验证码错误')
-                //  }
-                 
-                // // }else{
-                // //     var req=emailCode.validate($('.code_input').val);
-                // //     if(req){
-                // //         alert('图形验证正确')
-                // //     }else{
-                // //         alert('图形验证码错误')
-                // //     }
-                // // }
-            // })
 
         })
     }

@@ -25,7 +25,7 @@ class Login extends React.Component{
                     alert('登录成功')
                     hashHistory.push('/home')
                 }else{
-                    alert('用户名不存在')
+                    alert('用户名不存在或密码错误')
                 }
             }
         })
