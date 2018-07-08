@@ -15,7 +15,7 @@
 	width:770px;
 	height:539px;
 	border:3px solid #C0C0C0FF;
-	margin-left: 40px;
+	margin-left: 200px;
 	margin-top: 30px;
 	padding: 15px;
 	.l-main-top-tit{
@@ -184,7 +184,8 @@
 	width:780px;
 	min-height:500px;
 	border:1px solid #C0C0C0FF;
-	margin-left: 40px;
+	overflow: hidden;
+	margin-left: 200px;
 	margin-top: 30px;
 	padding: 0px 10px;
 	.l-main-con-ul{
@@ -204,18 +205,198 @@
 		border:1px solid red;
 		margin-bottom: 30px;
 	}
+	.l-te{
+		height:100px;
+		.l-h1{
+			margin-top: 80px;
+		}
+	}
 	.l-main-con-xian{
+		margin-top: 30px;
 		padding: 0px 20px;
+		margin-bottom: 30px;
+		.l-tijiao{
+			height: 40px;
+			width: 100%;
+			.l-ti{
+				border:none;
+				background-color: #FF4500FF;
+				color: white;
+				width: 80px;
+				height: 27px;
+			}
+			span{
+				margin-top: 20px;
+				font-size: 13px;
+				display: block;
+				float: left;
+				margin-left: 30px;
+			}
+			input{
+				margin-left: 10px;
+				margin-top: 15px;
+				height: 20px;
+				display: block;
+				float: left;
+				width: 70px;
+			}
+		}
+		.l-txa{
+			margin-top: 20px;
+			width: 740px;
+			height: 100px;
+		}
+		.l-man{
+			display: inline-block;
+			width: 200px;
+			float: left;
+			height: 50px;
+			text-align: center;
+			line-height: 50px;
+			font-size: 20px;
+			border-right: 1px solid #939393FF;
+		}
+		.l-num{
+			font-size: 30px;
+			color:#FF5A00FF;
+		}
+		.l-btn{
+			height: 50px;
+			display: inline-block;
+			width: 200px;
+			float: left;
+			button{
+				display: block;
+				border:none;
+				margin: 9px auto;
+				width: 100px;
+				height: 30px;
+				border-radius: 15px;
+				outline: none;
+				background-color: #FF5A00FF;
+				color: white;
+			}
+		}
+		.l-ping{
+			height: 50px;
+			display: inline-block;
+			width: 300px;
+			float: left;
+			border-right: 1px solid #939393FF;
+			span{
+				display:block; 
+				width: 190px;
+				height: 20px;
+				font-size: 11px;
+				margin: 7px auto;				
+				}
+		}
 		p{
 			text-indent: 10px;
-			font-size: 13px;
+			font-size: 12px;
+			min-height: 20px;
+			text-align: left;
+			padding:3px;
+			text-indent: 0px;
 		}
 		.l-anpai{
 			width: 90%;
-			height: 500px;
+			min-height: 500px;
 			margin-left: 3%;
 			padding-left: 30px;
 			border-left: 2px solid #898989FF;
+			.l-con-both{
+				margin-top: 20px;
+				margin-bottom: 30px;
+				p{
+					background-color: #F4F4F4FF;
+				}
+			}
+			h4{
+				border-bottom: 1px solid #C4C4C4FF;
+				.l-con-day{
+					color: #0022FFFF;
+					font-size: 18px;
+					border-bottom: 1px solid #C4C4C4FF;
+
+				}
+				.l-con-way{
+					margin-left: 30px;
+					font-size: 12px;
+				}
+			}
+			.l-con-zhu{
+				display: block;
+				width: 100%;
+				height: 50px;
+				border-bottom: 1px solid #C4C4C4FF;
+
+				svg{
+					height: 50px;
+					float: left;
+				}
+				span{
+					height: 50px;
+					float: left;
+					line-height: 50px;
+				}
+				.l-lan1{
+					color: #0022FFFF;
+				}
+			}
+			.l-con-bus{
+				display: block;
+				width: 100%;
+				height: 50px;
+				svg{
+					height: 50px;
+					float: left;
+					margin-left: 0px;
+				}
+				span{
+					display: inline-block;
+					height: 50px;
+					line-height: 50px;
+					float: left;
+				}
+				.l-lan2{
+					color: #0022FFFF;
+				}
+			}
+			.l-con-con{
+				margin-top: 10px;
+				background-color: white!important;
+			}
+			.l-can{
+				display: block;
+				width: 100%;
+				height: 50px;
+				border-bottom: 1px solid #C4C4C4FF;
+
+				svg{
+					height: 50px;
+					float: left;
+					margin-left: 0px;
+				}
+				span{
+					display: inline-block;
+					height: 50px;
+					line-height: 50px;
+					float: left;
+				}
+				.l-lan{
+					color: #0022FFFF;
+				}
+				.l-con-zao{
+					margin-left: 10px;
+				}
+				.l-con-wu{
+					margin-left: 90px;
+				}
+				.l-con-wan{
+					margin-left: 90px;
+				}
+			}
 		}
 	}
 
