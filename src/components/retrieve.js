@@ -4,10 +4,6 @@ const homeimg={
     backgroundSize:'100% 100%',
     backgroundImage:'url('+bgimg+')'
 }
-// import { Steps} from 'antd'
-
-// const Step = Steps.Step
-
 class Retrieve extends React.Component{
     constructor(props){
         super(props)
@@ -17,12 +13,12 @@ class Retrieve extends React.Component{
             <div className='eve-big' style={homeimg}>
                 <div className='center'>
                     <p>找回密码</p>
-                    {/* <Steps size="small" current={1}>
-                        <Step title="Finished" />
-                        <Step title="In Progress" />
-                        <Step title="Waiting" />
-                    </Steps> */}
-                    
+                {/* <Steps current={1} progressDot={customDot}>
+                    <Step title="Finished" description="You can hover on the dot." />
+                    <Step title="In Progress" description="You can hover on the dot." />
+                    <Step title="Waiting" description="You can hover on the dot." />
+                    <Step title="Waiting" description="You can hover on the dot." />
+                </Steps>, */}
                 </div>
             </div>
         )

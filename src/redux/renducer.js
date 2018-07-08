@@ -1,7 +1,7 @@
 
 var renducer=function(state,action){
     if(typeof state === undefined){
-        return {}
+        return []
     }
     switch (action.type) {
         case "user":

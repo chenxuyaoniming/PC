@@ -5,6 +5,7 @@ import App from './App';
 import {Router,Route,hashHistory,IndexRedirect,IndexRoute,Link} from 'react-router';
 import registerServiceWorker from './registerServiceWorker';
 import Home from './components/home'
+import Geren from './components/geren'
 import Retrieve from './components/retrieve'
 import Login from './components/login'
 import Register from './components/register'
@@ -27,12 +28,16 @@ ReactDOM.render(<Router history={hashHistory}>
     <Route path='/' component={App}>
         <IndexRoute component={Home} />
         <Route path='/home' component={Home}></Route>
-        <Route path='/list' component={List}></Route>
+        <Route path='/list/:id' component={List}></Route>
         <Route path='/login' component={Login}></Route>
         <Route path='/about/:id' component={About}></Route>
         <Route path='/register' component={Register}></Route>
         <Route path='/retrieve' component={Retrieve}></Route>
+<<<<<<< HEAD
         <Route path='/gouwuche' component={Gouwuche}></Route>
+=======
+        <Route path='/geren' component={Geren}></Route>
+>>>>>>> afe467ee7d5e09721a1d3abb84b98546458eb9de
     </Route>
     
 </Router>, document.getElementById('root'));
