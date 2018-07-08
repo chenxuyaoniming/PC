@@ -23,5 +23,119 @@
             letter-spacing: 2px;
             background:deepskyblue;
         }
+        .step{
+            width: 510px;
+            height: 5px;
+            margin: 46px 0 0 175px;
+            .step1{
+                background: deepskyblue;
+                border-radius: 3px 0 0 3px;
+                float: left;
+                width: 170px;
+                height: 5px;
+                margin-right: -3px;
+                position: relative;
+                i{
+                    background: deepskyblue;
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    display: block;
+                    color: #fff;
+                    width: 20px;
+                    height: 20px;
+                    line-height: 20px;
+                    text-align: center;
+                    margin: -10px 0 0 -10px;
+                    font-size: 13px;
+                    font-family: Arial;
+                    font-style: normal;
+                    border-radius: 50%;
+                }
+                em{
+                    font-style: normal;
+                    float: left;
+                    color: #0ab6eb;
+                    width: 170px;
+                    height: 30px;
+                    line-height: 30px;
+                    margin-top: 15px;
+                    text-align: center;
+                    font-size: 14px;
+                }
+            }
+            .step2{
+                float: left;
+                width: 170px;
+                height: 5px;
+                margin-right: -3px;
+                position: relative;
+                i{
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    display: block;
+                    color: #fff;
+                    width: 20px;
+                    height: 20px;
+                    line-height: 20px;
+                    text-align: center;
+                    margin: -10px 0 0 -10px;
+                    font-size: 13px;
+                    font-family: Arial;
+                    font-style: normal;
+                    border-radius: 50%;
+                }
+                em{
+                    font-style: normal;
+                    float: left;
+                   display: none;
+                   color: deepskyblue;
+                    width: 170px;
+                    height: 30px;
+                    line-height: 30px;
+                    margin-top: 15px;
+                    text-align: center;
+                    font-size: 14px;
+                }
+            }
+            .step3{
+                float: left;
+                width: 170px;
+                height: 5px;
+                margin-right: -3px;
+                position: relative;
+                border-radius:0 3px 3px 0;
+                // background: deepskyblue;
+                i{
+                    position: absolute;
+                    left: 50%;
+                    top: 50%;
+                    display: block;
+                    color: #fff;
+                    width: 20px;
+                    height: 20px;
+                    line-height: 20px;
+                    text-align: center;
+                    margin: -10px 0 0 -10px;
+                    font-size: 13px;
+                    font-family: Arial;
+                    font-style: normal;
+                    border-radius: 50%;
+                }
+                em{
+                    display: none;
+                    font-style: normal;
+                    float: left;
+                    color: #0ab6eb;
+                    width: 170px;
+                    height: 30px;
+                    line-height: 30px;
+                    margin-top: 15px;
+                    text-align: center;
+                    font-size: 14px;
+                }
+            }
+        }
     }
 }
