@@ -94,6 +94,7 @@ class Gouwuche extends Component{
                 if(zval != ''){
                      if(zavl1===zval){
                         console.log(users)
+                        alert('请输入正确验证码')
                         if(users!==undefined){
                             $.ajax({
                                 url:'http://datainfo.duapp.com/shopdata/updatecar.php',
