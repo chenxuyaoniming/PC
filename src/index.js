@@ -12,6 +12,7 @@ import Register from './components/register'
 import About  from './components/about'
 import List from './components/list'
 import Gouwuche from './components/gouwuche'
+import Person from './components/person.js'
 import './css/home.scss'
 import './css/index.scss'
 import './css/about.scss'
@@ -35,7 +36,9 @@ ReactDOM.render(<Router history={hashHistory}>
         <Route path='/retrieve' component={Retrieve}></Route>
         <Route path='/geren' component={Geren}></Route>
         <Route path='/gouwuche' component={Gouwuche}></Route>
+         <Route path='/person' component={Person}></Route>
     </Route>
+
     
 </Router>, document.getElementById('root'));
 registerServiceWorker();

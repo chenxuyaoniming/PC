@@ -1,0 +1,217 @@
+#Person{
+	width: 1200px;
+	margin: 0 auto;
+	margin-top: 40px;
+	>p{
+		font-size: 14px;
+		color: #555;
+		border-bottom: 1px solid #ccc;
+		padding-bottom: 10px;
+
+	}
+	>section{
+		margin-top: 20px;
+		overflow: hidden;
+		#section-left{
+			float: left;
+			width: 18%;
+			background: #f6f6f6;
+			ul{
+				padding: 20px 0;
+				li{
+					>i{
+						margin:20px 20px 0 0;
+						font-size: 20px;
+						color: blue;
+					}
+					position: relative;
+					text-align: center;
+					height: 50px;
+					line-height: 50px;
+					font-size: 14px;
+					cursor: pointer;
+					&:hover{
+						background: blue;
+						color: #fff;
+						>i{
+							color: #fff;
+						}
+					}
+
+				}
+				.light{
+						background: blue;
+						color: #fff;
+						>i{
+							color: #fff;
+						}
+					}
+			}
+		}
+		#section-right{
+			float: right;
+			width: 80%;
+			>header{
+				background: #f6f6f6;
+				padding: 20px;
+				overflow: hidden;
+				#header-left{
+					width: 38%;
+					float: left;
+					border-right: 1px solid #ccc;
+					height: 160px;
+					img{
+						float: left;
+						width: 80px;
+						height: 80px;
+						background: #ccc;
+						border-radius: 5px;
+					}
+					div{
+						float: right;
+						font-size: 16px;
+						width: 240px;
+						h3{
+							font-size: 20px;
+							margin: 10px 0 ;
+						}
+						p{
+							height: 26px;
+							line-height: 26px;
+						}
+					}
+				}
+				#header-right{
+					float: right;
+					width: 60%;
+					div{
+						float: left;
+						margin: 30px 40px 0;
+						width: 100px;
+						height: 80px;
+						text-align: center;
+						p{
+							font-size: 16px;
+							margin-top: 20px;
+						}
+						i{
+							border: 3px solid yellowgreen;
+							padding: 10px;
+							border-radius: 50%;
+							font-size: 26px;
+							color: yellowgreen;
+
+						}
+					}
+				}
+			}
+			section{
+				padding: 10px;
+				margin-top: 20px;
+				border: 1px solid #ececec;
+				h3{
+					height: 60px;
+					line-height: 60px;
+					font-size: 24px;
+					border-bottom: 1px solid #ccc;
+					span{
+						float: right;
+						font-size: 14px;
+					}
+					i{
+						font-size: 40px;
+						margin-right: 10px;
+					}
+				}
+				#person-list{
+					position: relative;
+					min-height: 400px;
+					#kk{
+						position: absolute;
+						top: 50%;
+						left: 50%;
+						width: 200px;
+						height: 40px;
+						margin-top: -20px;
+						margin-left: -100px;
+						text-align: center;
+						line-height: 40px;
+						font-size: 20px;
+					}
+					.pers-Con{
+				        padding: 10px;
+				        border: 1px solid #ccc;
+				        margin-top: 20px;
+				        overflow: hidden;
+				        position: relative;
+				           a{
+				                 img{
+				                height: 140px;
+				                width: 206px;
+				                float: left;
+				            	}
+				            }	
+				            >div{
+				                float: left;
+				                margin: 0 10px;
+				                width: 240px;
+				                position: relative;
+				                height: 140px;
+				                >p{
+				                    
+				                }
+				                >div{
+				                    display:block;
+				                    position: absolute;
+				                    bottom: 0;
+				                    left: 0;
+				                    font-size: 14px;
+				                    color: #666;
+				                    >p{
+				                        >span{
+				    
+				                        }
+				                        >i{
+				                            color: #0f0;
+				                        }
+				                    }
+				                }
+				            }
+				            >em{
+				                position: absolute;
+				                right: 20px;
+				                top: 30px;
+				                width: 150px;
+				                font-style: normal;
+				                text-align: center;
+				               
+				                >p{
+				                    font-size: 24px;
+				                    color: orange;
+				                }
+				                >div{
+				                    background: #f5f9fd;
+				                    padding: 5px;
+				                    overflow: hidden;
+				                    font-size: 12px;
+				                    color: #999;
+				                     margin:  auto;
+				                    margin-top: 20px;
+				                    width: 80px;
+
+				                   button{
+				                   	border: none;
+				                   	height: 30px;
+				                   	width: 70px;
+				                   	background: #f40;
+				                   	color: #fff;
+				                   }
+				                }
+				            }
+				       
+				    }
+				}
+			}
+		}
+	}
+}
