@@ -67,24 +67,29 @@ class Retrieve extends React.Component{
         $(function(){
             $('.next').click(function(){
                 var phonenum=$('.input1').val()
-                $.ajax({
-                    type:'post',
-                    url:'http://localhost:9000/retrieve',
-                    data:{phoneNum:phonenum},
-                    success:function(data){
-                        console.log(data)
-                        if(data==1){
-                            $('.main-box1').css('display','none')
-                            $('.main-box2').css('display','block')
-                            $('.step2').css('background','deepskyblue')
-                            $('.step2-1').find('i').css('background','deepskyblue')
-                            $('.step2-1').find('em').css('display','block')
-                            $('.main-box2-1').html(phonenum)
-                        }else{
-                            alert('用户名不存在')
+                if(phonenum==''){
+                    alert('请输入用户名')
+                }else{
+                    $.ajax({
+                        type:'post',
+                        url:'http://localhost:9000/retrieve',
+                        data:{phoneNum:phonenum},
+                        success:function(data){
+                            console.log(data)
+                            if(data==1){
+                                $('.main-box1').css('display','none')
+                                $('.main-box2').css('display','block')
+                                $('.step2').css('background','deepskyblue')
+                                $('.step2-1').find('i').css('background','deepskyblue')
+                                $('.step2-1').find('em').css('display','block')
+                                $('.main-box2-1').html(phonenum)
+                            }else{
+                                alert('用户名不存在')
+                            }
                         }
-                    }
-                })
+                    })
+                }
+               
             })
             $('.yzmm').click(function(){
                 var phonenum=$('.main-box2-1').html()

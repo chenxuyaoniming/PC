@@ -38,6 +38,7 @@ class Login extends React.Component{
             success:function(data){
                 if(data==1){
                     alert('登录成功')
+                    sessionStorage.setItem('user',phonenum)
                     store.dispatch(action(phonenum))
                     console.log(store.getState())
                     hashHistory.push('/home')

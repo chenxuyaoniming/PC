@@ -12,7 +12,7 @@ class App extends Component {
     super(props)
     this.state={
       goods:[],
-      user:Store.getState()
+      user:sessionStorage.getItem('user')
     }
   }
   change(a){
@@ -24,6 +24,7 @@ class App extends Component {
 
   reset(){
     Store.dispatch(Action(''))
+    sessionStorage.removeItem('user')
   }
   ret(){
     // console.log(1111)
