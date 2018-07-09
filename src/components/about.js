@@ -86,7 +86,7 @@ class About extends React.Component{
 		this.state={
 			arr:{},
 			num:"",
-			pos:0,
+			pos:1,
 			chuan:{},
 			img:[]
 		}
@@ -219,9 +219,9 @@ class About extends React.Component{
 	 							</select>
 
 	 						</p>
-	 						<p className="l-main-top-right-er-renshu">出游人数：<span >-</span><span className="l-num">1</span><span >+</span><p>{_this.state.arr.pri}元/成人</p></p>
-	 						<button className="l-main-top-btn" onClick={_this.tap.bind(_this)} >立即购买</button>
-						</div>
+	 						<p className="l-main-top-right-er-renshu">出游人数：<span onClick={_this.jian.bind(_this)}>-</span><span className="l-num">{_this.state.pos}</span><span onClick={_this.jia.bind(_this)}>+</span><p>{_this.state.chuan.price}元/成人</p></p>
+	 						<button className="l-main-top-btn" onClick={_this.tag.bind(_this)}>立即购买</button>
+						</div>{_this.state.chuan.goodsID}
 						<p className="l-main-top-right-from">出发地：{_this.state.arr.from}</p>
 						<p className="l-main-top-right-from">旅游天数：{_this.state.arr.day1}</p>
 						<p className="l-main-top-right-from">提前预定：提前15天预定</p>
@@ -406,10 +406,6 @@ class About extends React.Component{
 					opacity: '1',
 				});
 			})
-
-
-		
-
 	
 		window.onscroll=function(){
 			if($("html").scrollTop()>820){
@@ -419,6 +415,27 @@ class About extends React.Component{
 			}
 		};
 	}
+
+		jian(){
+			var _this=this;
+			if(_this.state.pos<2){
+				_this.setState({
+				pos:1
+			})
+			}else{
+				_this.setState({
+				pos:this.state.pos-1
+			})
+
+			}
+		}
+
+		jia(){
+			var _this=this;
+			_this.setState({
+				pos:this.state.pos+1
+			})
+		}
 
 
 
@@ -449,8 +466,10 @@ class About extends React.Component{
 		 		})
 	 		}
 	 	}
-	 	tap(){
-	 		hashHistory.push("/gouwuche")
+
+	 	tag(){
+	 		var _this=this
+	 		hashHistory.push({pathname:"/gouwuche",query:{id:_this.state.chuan.goodsID,num:_this.state.pos,price:_this.state.chuan.price}})
 	 	}
 
 }

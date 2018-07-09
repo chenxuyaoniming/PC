@@ -31,6 +31,7 @@
     width: 1200px;
     min-height: 1000px;
     margin: auto;
+    margin-bottom: 10px;
     .zsection_left{
         width: 805px;
         height: 293px;
@@ -313,7 +314,7 @@ h2{
     padding: 14px;
     color: #999;
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     .zlv_1{
         position: absolute;
         top: 20px;
@@ -414,4 +415,71 @@ h2{
         }
     }
 }
+}
+.zjie{
+    width: 865px;
+    
+    .zjiesuan{
+        height: 48px;
+        padding: 20px 30px ;
+        background: white;
+        margin:10px 0;
+        line-height: 48px;
+        color: #999;
+        b{
+            color:orangered;
+            font-size: 20px;
+        }
+    }
+    .ztijiao{
+        height: 40px;
+        padding: 20px 30px ;
+        background: white;
+        margin:10px 0;
+        line-height: 40px;
+        clear: both;
+        
+        div{
+            display: inline-block;
+            float: right;
+            font-size: 16px;
+            .ztijao_1{
+                width: 120px;
+                height: 40px;
+                border: none;
+                background: orangered;
+                color: white;
+                
+               margin-left:10px; 
+            }
+            #zsuiji1{
+                height: 26px;
+                width: 100px;
+                padding: 0;
+                float: left;
+                margin-left:10px; 
+                margin-top: 5px;
+            }
+            #zsuiji{
+                
+                display: inline-block;
+                width: 100px;
+                height: 28px;
+                line-height: 30px;
+                border: 1px solid #999999;
+                float: left;
+                margin-left:10px; 
+                margin-top: 5px;
+            }
+            .zjiespan{
+                float: left;
+                font-size: 14px;
+            }
+        }
+        
+
+
+        
+        
+    }
 }

@@ -24,7 +24,8 @@ class Register extends React.Component{
 	componentDidMount(){
 //		监听
 		store.subscribe(this.onchanges)
-	}
+    }
+////////////////////////// 手机号注册//////////////////////////////
     register(){
             var phoneNumber=this.refs.phoneNumber.value;
             var yzmm=this.refs.yzmm.value;
@@ -32,11 +33,13 @@ class Register extends React.Component{
             var pass=this.refs.pass.value;
             var pass1=this.refs.pass1.value;
             var reg=/^1[34578]\d{9}$/
+////////////////验证手机号格式/////////////////////////////////
             if(reg.test(phoneNumber)==false){
                 alert('请输入正确的手机号')
             }else if(pass!=pass1){
                 alert('两次密码不一致')
             }else{
+//////////////////发起ajax请求/////////////////////////////////
                 $.ajax({
                     type:'post',
                     url:'http://localhost:9000/register',
@@ -46,8 +49,8 @@ class Register extends React.Component{
                         console.log(data)
                         if(data==1){
                             alert('注册成功')
-                            hashHistory.push('/home')
-                            store.dispatch(action(phoneNumber))
+                            hashHistory.push('/home')//注册成功过后跳转
+                            store.dispatch(action(phoneNumber))//将用户名存在store里
                             console.log(store.getState())
                         }else if(data==2){
                             alert('手机验证码错误')
@@ -56,15 +59,15 @@ class Register extends React.Component{
                         }
                     }
                 })
-            }
-        
+            }  
     }
+/////////////////////邮箱注册///////////////////////////
     email(){
             var email=this.refs.email.value
             var emailpass = this.refs.emailpass.value
             var emailpass1=this.refs.emailpass1.value
             var emailreg=/^[A-Za-z\d]+([-_.][A-Za-z\d]+)*@([A-Za-z\d]+[-.])+[A-Za-z\d]{2,4}$/
-            if(emailreg.test(email)==false){
+            if(emailreg.test(email)==false){////////////////////验证邮箱格式
                 alert('邮箱格式错误')
             }else{
                 $.ajax({
@@ -82,6 +85,7 @@ class Register extends React.Component{
                 })
             }
     }
+/////////////////////发送验证码//////////////////////////////
     send(){
         var reg=/^1[34578]\d{9}$/
         var phoneNumber=this.refs.phoneNumber.value;
@@ -102,7 +106,7 @@ class Register extends React.Component{
             alert('验证码已发送')
          }
     }
-
+////////////////////////结构////////////////////////
     render(){
         return(
             <div className='Register-big' style={homeimg}>
@@ -137,6 +141,7 @@ class Register extends React.Component{
             </div>    
         )
     }
+///////////////////控制手机，邮箱切换///////////////////
 componentDidMount(){
         $(function(){
             $('.left-top-1').click(function(){
