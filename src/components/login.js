@@ -1,11 +1,12 @@
 import React from 'react';
 import '../font/iconfont.css'
 import { Link } from 'react-router';
-import bgimg from '../img/bg1.jpg'
+import bgimg from '../img/bg1.jpg'//引入要使用的背景图 通过声明homeing来保存图片属性 虽然不知道为什么这样写 但他就是对了
 import {hashHistory} from 'react-router'
 import $ from 'jquery'
 import action from '../redux/action'
 import store from '../redux/store'
+/////////添加背景图片///////////////
 const homeimg={
     backgroundSize:'100% 100%',
     backgroundImage:'url('+bgimg+')'
@@ -24,7 +25,8 @@ class Login extends React.Component{
 	componentDidMount(){
 //		监听
 		store.subscribe(this.onchanges)
-	}
+    }
+/////////////////登录/////////////////////
     login(){
         var phonenum=this.refs.username.value
         var pass=this.refs.password.value

@@ -18,8 +18,6 @@ class App extends Component {
   change(a){
     this.setState({user:Store.getState()})
   }
-
-
   componentWillMount(){
     Store.subscribe(this.change.bind(this))
   }

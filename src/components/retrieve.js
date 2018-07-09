@@ -40,15 +40,15 @@ class Retrieve extends React.Component{
                         </div>
                     </div>
                     <div className='main-box1'>
-                        <div className='div1'><span className='bt-left'>登录账号:</span><input ref='phoneNumber' type='text' placeholder='请输入手机号' /></div>
+                        <div className='div1'><span className='bt-left'>登录账号:</span><input className='input1' ref='phoneNumber' type='text' placeholder='请输入手机号' /></div>
                         <div className='div2'><span className='bt-left'>验证码:</span><input ref='yzmm' type='text' className='code_input' /><span id='v_container' className='yzmm'></span></div>
                         <button className='next'>下一步</button>
                     </div>
                     <div className='main-box2'>
                         <div className='div1'><span className='bt-left'>账号:</span><div className='main-box2-1'></div></div>
-                        <div className='div3'><span className='bt-left'>动态验证码:</span><input ref='yzm' type='text'/><span className='yzmm'>获取验证码</span></div>
-                        <div className='div4'><span className='bt-left'>设置新密码:</span><input ref='pass' type='text' placeholder='请输入登录密码' /></div>
-                        <div className='div5'><span className='bt-left'>确认新密码:</span><input ref='pass1' type='text' placeholder='请再次输入登录密码' /></div>
+                        <div className='div3'><span className='bt-left'>动态验证码:</span><input className='yzm' type='text'/><span className='yzmm'>获取验证码</span></div>
+                        <div className='div4'><span className='bt-left'>设置新密码:</span><input className='pass' type='text' placeholder='请输入登录密码' /></div>
+                        <div className='div5'><span className='bt-left'>确认新密码:</span><input className='pass1' type='text' placeholder='请再次输入登录密码' /></div>
                         <button className='next2'>下一步</button>
                     </div>
                     <div className='main-box3'>
@@ -62,21 +62,71 @@ class Retrieve extends React.Component{
             </div>
         )
     }
+/////////////简版的步骤条//////////////////
     componentDidMount(){
         $(function(){
             $('.next').click(function(){
-                $('.main-box1').css('display','none')
-                $('.main-box2').css('display','block')
-                $('.step2').css('background','deepskyblue')
-                $('.step2-1').find('i').css('background','deepskyblue')
-                $('.step2-1').find('em').css('display','block')
+                var phonenum=$('.input1').val()
+                $.ajax({
+                    type:'post',
+                    url:'http://localhost:9000/retrieve',
+                    data:{phoneNum:phonenum},
+                    success:function(data){
+                        console.log(data)
+                        if(data==1){
+                            $('.main-box1').css('display','none')
+                            $('.main-box2').css('display','block')
+                            $('.step2').css('background','deepskyblue')
+                            $('.step2-1').find('i').css('background','deepskyblue')
+                            $('.step2-1').find('em').css('display','block')
+                            $('.main-box2-1').html(phonenum)
+                        }else{
+                            alert('用户名不存在')
+                        }
+                    }
+                })
+            })
+            $('.yzmm').click(function(){
+                var phonenum=$('.main-box2-1').html()
+                $.ajax({
+                    type:'post',
+                    url:'http://localhost:9000/register-yzm',
+                    async:true,
+                    data:{phonenum:phonenum,id:'1'},
+                    success:function(data){
+                       
+                    }
+                })
+                alert('验证码已发送，请注意查收!')
             })
             $('.next2').click(function(){
-                $('.main-box2').css('display','none')
-                $('.main-box3').css('display','block')
-                $('.step3').css('background','deepskyblue')
-                $('.step3-1').find('i').css('background','deepskyblue')
-                $('.step3-1').find('em').css('display','block')
+                var phonenum=$('.main-box2-1').html()
+                var yzm=$('.yzm').val()
+                var pass=$('.pass').val()
+                var pass1=$('.pass1').val()
+                if(pass!=pass1){
+                    alert('两次密码不一致')
+                }else{
+                    $.ajax({
+                        type:'post',
+                        url:'http://localhost:9000/register-yzm',
+                        data:{phonenum:phonenum,id:'2',yzm:yzm,pass:pass,pass1:pass1},
+                        success:function(data){
+                            console.log(data)
+                            if(data==2){
+                                alert('验证码错误')
+                            }else{
+                                alert('修改成功')
+                                $('.main-box2').css('display','none')
+                                $('.main-box3').css('display','block')
+                                $('.step3').css('background','deepskyblue')
+                                $('.step3-1').find('i').css('background','deepskyblue')
+                                $('.step3-1').find('em').css('display','block')
+                            }
+                        }
+                    })
+                }
+               
             })
         })
     }
