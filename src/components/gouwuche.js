@@ -13,8 +13,13 @@ class Gouwuche extends Component{
         this.state={
             jing:'',
             yan:'',
-            user:Stor.getState()
+            user:Stor.getState(),
+            price:'',
+            name:'稍等-'
         }
+    }
+    componentWillMount(){
+      
     }
     change(a){
         this.setState({user:Stor.getState()})
@@ -22,28 +27,48 @@ class Gouwuche extends Component{
     componentDidMount(){
         
         var _this=this;
+        let id = this.props.location.query.id
+        let num = this.props.location.query.num
+        console.log(this.props.location.search)
+        $.ajax({
+            url: 'http://datainfo.duapp.com/shopdata/getGoods.php',
+            type: 'post',
+            async:false,
+            dataType: 'jsonp',
+            data: {goodsID:id},
+            success:function(data){
+                _this.setState({
+                    price:data[0].price,
+                    name:data[0].goodsName,
+                    jing:data[0].price*num
+                })
+                console.log(data)
+
+            }
+        })
+
+
+        ////////////////////////////////////////////
+
         var jg=$('.zdanjia').html()
         _this.setState({jing:jg})
         $(function(){
-            var i=1;
             var arr='';
-            $('#ztb_in').val(i)
+            $('#ztb_in').val(num)
             $('.zjian').click(function(){
                 
-                i++;
-                $('#ztb_in').val(i)
-                $('.zxiaoji').html($('.zdanjia').html()*i)
+                num++;
+                $('#ztb_in').val(num)
+                $('.zxiaoji').html($('.zdanjia').html()*num)
                 arr=$('.zxiaoji').html()
-                
                 _this.setState({jing:arr})
             })
             $('.zjia').click(function(){
-                if(i>1){
-                    i--;
-                    $('#ztb_in').val(i)
-                    $('.zxiaoji').html($('.zdanjia').html()*i)
-                    arr=$('.zxiaoji').html()
-                    
+                if(num>1){
+                    num--;
+                    $('#ztb_in').val(num)
+                    $('.zxiaoji').html($('.zdanjia').html()*num)
+                    arr=$('.zxiaoji').html()                   
                     _this.setState({jing:arr})
                 }
             })
@@ -65,17 +90,34 @@ class Gouwuche extends Component{
                 
                 var zval=$('#zsuiji1').val()
                 var zavl1=$('#zsuiji').html()
-                
-                if(zavl1===zval){
-                    console.log(users)
-                    if(users!==undefined){
-                        alert('成功')
+                console.log(zavl1)
+                if(zval != ''){
+                     if(zavl1===zval){
+                        console.log(users)
+                        if(users!==undefined){
+                            $.ajax({
+                                url:'http://datainfo.duapp.com/shopdata/updatecar.php',
+                                type:'post',
+                                dataType:'jsonp',
+                                data:{userID:'001',goodsID:id,number:num},
+                                success:function(data){
+                                    console.log(data)
+                                    alert('成功')
+                                    hashHistory.push('/person')
+                                }
+                            })
+                        }else{
+                            alert("请登录")
+                              
+                        }
+                        
                     }else{
-                        alert("请登录")
-                        hashHistory.push('/login')
+                        alert("验证码错误，请重试")
                     }
-                    
+                }else{
+                    alert("请输入验证码")
                 }
+               
             })
         })
         
@@ -93,9 +135,9 @@ class Gouwuche extends Component{
                     <div className="zsection_left">
                         <div className="zsection_h">
                             <h2>
-                                【圆梦-丝路小环线】青海+甘肃高铁往返7日游无购物无自费
+                                【{this.state.name}】
                             </h2>
-                            <div>产品编号：11150</div>
+                            <div>产品编号：{this.props.location.query.id}</div>
                         </div>
                         <ul className="zsection_ul">
                             <li><span>套餐预定:</span><b>1</b></li>
@@ -111,9 +153,9 @@ class Gouwuche extends Component{
                                     </tr>
                                     <tr>
                                         <th>成人</th>
-                                        <th><span className="zdanjia">4380</span></th>
+                                        <th><span className="zdanjia">{this.state.price}</span></th>
                                         <th className="zhjj"><div><span className="zjia">-</span><input type="text" id="ztb_in"/><span className="zjian">+</span></div></th>
-                                        <th className="zhjj1"><b>￥</b><span className="zxiaoji">4380</span></th>
+                                        <th className="zhjj1"><b>￥</b><span className="zxiaoji">{this.state.jing}</span></th>
                                     </tr>
                                 </table>
                             </li>
@@ -130,7 +172,7 @@ class Gouwuche extends Component{
                                 <li><span>预定时间</span><b>20180701</b></li>
                                 <li><span>出发时间</span><b>20180701</b></li>
                                 <li><span>预定套餐</span><b>1</b></li>
-                                <li><span>成人</span><b>￥<a>4380</a></b></li>
+                                <li><span>成人</span><b>￥<a>{this.state.jing}</a></b></li>
                             </ul>
                         </div>
                         <div  className="zaside_3">

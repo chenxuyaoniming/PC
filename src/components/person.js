@@ -3,7 +3,7 @@ import React from 'react';
 import '../css/person.scss';
 import '../font/iconfont.css';
 import Store from '../redux/store.js';
-import {Link} from 'react-router';
+import {Link,hashHistory} from 'react-router';
 import $ from 'jquery';
 class Person extends React.Component{
 	constructor(props){
@@ -14,26 +14,42 @@ class Person extends React.Component{
 		}
 	}
 
-	componentWillMount(){
+	componentDidMount(){
 		let _this = this;
-		$.ajax({
-			url:'http://datainfo.duapp.com/shopdata/getGoods.php',
+		function shuju(){
+			console.log(111111111111)
+			$.ajax({
+			url:'http://datainfo.duapp.com/shopdata/getCar.php',
 			type:'get',
+			data:{userID:'aaa'},
 			dataType:'jsonp',
 			success:function(data){
 				_this.setState({
 					cont:data
 				})
+				console.log(3333333)
 				$('.p-del').click(function(e){
-				let id = $(this).attr('data-id')
-				console.log(id,111)
+					let id = $(this).attr('data-id')
+					console.log(id)
+					 $.ajax({
+		                url:'http://datainfo.duapp.com/shopdata/updatecar.php',
+		                type:'post',
+		                data:{userID:'aaa',goodsID:id,number:0},
+		                success:function(data){
 
-					e.stopPropagation()
+		                    if(data == 1){
+		                    	alert('操作成功~!')
+		                    	shuju()
+		                    }else{
+		                    	alert('系统出错辣~！')
+		                    }
+		                }
+		             })
 				})
 			}
 		})
-	}
-	componentDidMount(){
+		}
+		shuju()
 		
 	}
 	elem(){
@@ -50,12 +66,12 @@ class Person extends React.Component{
                                         <div>
                                             <p>  <i className="icon iconfont icon-importedlayers"></i>郑州出发</p>
                                             <p>价格 : <span>￥{item.price}</span></p>
-                                            <p>行程 : <span>4天</span></p>
+                                            <p>数量 : <span>{item.number}</span></p>
                                         </div>
                                     </div>
                                     <em>
                                         <p>
-                                            ￥{item.price}
+                                            ￥{item.price*item.number}
                                         </p>
                                         <div>
                                             <button className='p-del' data-id={item.goodsID}>删除商品</button>
@@ -102,7 +118,7 @@ class Person extends React.Component{
 							<div id="header-left">
 								<img src="http://www.aozhoutrip.com/res/images/member_nopic.png" alt="pic" />
 								<div className='person-zl'>
-									<h3>112233445</h3>
+									<h3>{this.state.user}</h3>
 									<p>会员等级：普通</p>
 									<p>登录邮箱：*********</p>
 									<p>手机号码：11223344</p>
