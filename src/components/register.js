@@ -5,7 +5,7 @@ import bgimg from '../img/bg1.jpg'
 import { hashHistory } from 'react-router'
 import action from '../redux/action'
 import store from '../redux/store'
-import './gVerify.js'
+// import './gVerify.js'
 const homeimg={
     backgroundSize:'100% 100%',
     backgroundImage:'url('+bgimg+')'
@@ -27,10 +27,10 @@ class Register extends React.Component{
     }
 ////////////////////////// 手机号注册//////////////////////////////
     register(){
-            var verifyCode = new GVerify('v_container')
+            // var verifyCode = new GVerify('v_container')
             var phoneNumber=this.refs.phoneNumber.value;
             var yzmm=this.refs.yzmm.value;
-            var res =verifyCode.validate(yzmm);
+            // var res =verifyCode.validate(yzmm);
             var yzm=this.refs.yzm.value;
             var pass=this.refs.pass.value;
             var pass1=this.refs.pass1.value;
@@ -40,7 +40,7 @@ class Register extends React.Component{
                 alert('请输入正确的手机号')
             }else if(pass!=pass1){
                 alert('两次密码不一致')
-            }else if(res){
+            }else{
 //////////////////发起ajax请求/////////////////////////////////
                 $.ajax({
                     type:'post',
@@ -61,8 +61,6 @@ class Register extends React.Component{
                         }
                     }
                 })
-            }else{
-                alert('验证码错误')
             }
 
     }
