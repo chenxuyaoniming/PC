@@ -219,7 +219,7 @@ class About extends React.Component{
 	 							</select>
 
 	 						</p>
-	 						<p className="l-main-top-right-er-renshu">出游人数：<span onClick={_this.jian.bind(_this)}>-</span><span className="l-num">{_this.state.pos}</span><span onClick={_this.jia.bind(_this)}>+</span><p>{_this.state.arr.pri}元/成人</p></p>
+	 						<p className="l-main-top-right-er-renshu">出游人数：<span onClick={_this.jian.bind(_this)}>-</span><span className="l-num">{_this.state.pos}</span><span onClick={_this.jia.bind(_this)}>+</span><p>{_this.state.chuan.price}元/成人</p></p>
 	 						<button className="l-main-top-btn" onClick={_this.tag.bind(_this)}>立即购买</button>
 						</div>{_this.state.chuan.goodsID}
 						<p className="l-main-top-right-from">出发地：{_this.state.arr.from}</p>
@@ -469,7 +469,7 @@ class About extends React.Component{
 
 	 	tag(){
 	 		var _this=this
-	 		hashHistory.push({pathname:"/gouwuche",query:{id:_this.state.chuan.goodsID,num:_this.state.pos}})
+	 		hashHistory.push({pathname:"/gouwuche",query:{id:_this.state.chuan.goodsID,num:_this.state.pos,price:_this.state.chuan.price}})
 	 	}
 
 }
