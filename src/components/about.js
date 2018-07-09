@@ -6,6 +6,9 @@ import pn1 from "../img/hot.png"
 import pn2 from "../img/jx.png"
 import "../l-iconfont/iconfont.css"
 import "../l-iconfont/iconfont.js"
+import {hashHistory} from "react-router"
+
+
 
 class Lef extends React.Component{
 	constructor(props){
@@ -82,14 +85,17 @@ class About extends React.Component{
 		super(props);
 		this.state={
 			arr:{},
-			num:""
+			num:"",
+			pos:0,
+			chuan:{},
+			img:[]
 		}
 	}
 
 	
 	componentWillMount(){
 
-
+			var id=this.props.params.id;
 			var _this=this;
 			$.ajax({
 						url: 'http://www.lei.com/api',
@@ -103,16 +109,33 @@ class About extends React.Component{
 						console.log(_this.state.arr)
 						}
 				})
+
+
+			
+			
+			
 	}
 
 
-	
 
+		tag(i){
 
+		 	console.log(i.i)
+		 	var cc=i.i;
+		 	this.setState({
+		 		pos:cc
+		 	})
+		 	$(".l-img").css({
+		 		opacity:"0"
+		 	})
+			$(".l-img").eq(cc).animate({
+				opacity: "1"
+			},100);
+		}
 
-
-
+	 	
 	render(){
+
 		var _this=this;
 
 		return(
@@ -127,31 +150,41 @@ class About extends React.Component{
 						<img src={pn2}  className="l-main-top-pic"/>
 					</div>
 					<div className="l-main-top-two">
-						<div className="l-main-top-two-one">线路编号：{_this.state.arr.id}</div>
+						<div className="l-main-top-two-one">线路编号：{_this.state.chuan.goodsID}</div>
 						<div>精华景点：{_this.state.arr.jd}</div>
 					</div>
 					<div className="l-main-top-tu">
-						<div className="l-main-top-da"></div>
-						<div className="l-xiao">
 
-
-							<span className="l-shang l-z">
-								<Lef />
-							</span>
-
-
+						<div className="l-main-top-da">
 							<ul>
 								{
-									_this.state.arr.image.map((item,i)=>{
+									_this.state.img.map((item,i)=>{
 										return(
-											<li style={{background:"url("+{item}+") no-repeat fixed top"}}></li>
+											<li><img src={item} className="l-img"/></li>
 											)
 									})
 								}
 							</ul>
+						</div>
 
+						<div className="l-xiao">
+							<span className="l-shang l-z" onClick={_this.shang.bind(this)}>
+								<Lef />
+							</span>
+							
+							<div className="l-lun">
+								<ul id="l-lb">
+									{
+										_this.state.img.map((item,i)=>{
+											return(
+												<li><img  key={i} src={item} onClick={_this.tag.bind(_this,{i})} className="l-lt"/></li>
+												)
+										})
+									}
+								</ul>
+							</div>
 
-							<span className="l-xia l-z">
+							<span className="l-xia l-z" onClick={_this.xia.bind(this)}>
 								<Rig />
 							</span>
 
@@ -160,7 +193,7 @@ class About extends React.Component{
 						</div>
 					</div>
 					<div className="l-main-top-tu-right">
-						<p>优惠价:<span className="l-main-top-tu-right-da">{_this.state.arr.pri}</span>起</p>
+						<p>优惠价:<span className="l-main-top-tu-right-da">{_this.state.chuan.price}</span>起</p>
 						<div className="l-main-top-tu-right-er"><span className="l-main-top-right-er-one">销量：{_this.state.arr.xiao}</span><span>满意度：{_this.state.arr.manyi}</span><span>{_this.state.arr.ping}条点评</span></div>
 						<div className="l-main-top-tu-right-kuang">
 	 						<p>套餐类型：
@@ -186,8 +219,8 @@ class About extends React.Component{
 	 							</select>
 
 	 						</p>
-	 						<p className="l-main-top-right-er-renshu">出游人数：<span>-</span><span>0</span><span>+</span><p>￥{_this.state.arr.pri}元/成人</p></p>
-	 						<button className="l-main-top-btn">立即购买</button>
+	 						<p className="l-main-top-right-er-renshu">出游人数：<span >-</span><span className="l-num">1</span><span >+</span><p>{_this.state.arr.pri}元/成人</p></p>
+	 						<button className="l-main-top-btn" onClick={_this.tap.bind(_this)} >立即购买</button>
 						</div>
 						<p className="l-main-top-right-from">出发地：{_this.state.arr.from}</p>
 						<p className="l-main-top-right-from">旅游天数：{_this.state.arr.day1}</p>
@@ -214,11 +247,7 @@ class About extends React.Component{
 						<li>客户评价</li>
 						<li>我要咨询</li>
 					</ul>
-					
-					<div className="l-main-con-day">
-						 
 
-					</div>
 					<div className="l-main-con-xian">
 					
 						<p className="l-main-con-ts">线路特色</p>
@@ -348,6 +377,80 @@ class About extends React.Component{
 			</div>
 		)
 	}
+
+
+	componentDidMount(){
+			var _this=this
+
+		$.ajax({
+				url: 'http://datainfo.duapp.com/shopdata/getGoods.php',
+				type: 'post',
+				dataType: 'jsonp',
+				async:false,
+				data: {goodsID:_this.props.params.id},
+				success:function(data){
+					_this.setState({
+						chuan:data[0],
+						img:JSON.parse(data[0].imgsUrl)
+					})
+					console.log(JSON.parse(data[0].imgsUrl))
+
+				}
+			}).then(function(){
+				console.log($(".l-lt").eq(0).offsetWidth)
+					$("#l-lb").css({
+						width: ($(".l-lt").length*120),
+						position:"absolute"
+					});
+			})
+
+
+		$(".l-img").eq(0).css({
+				opacity: '1',
+			});
+
+	
+		window.onscroll=function(){
+			if($("html").scrollTop()>820){
+				$("#l-lie").css({"position":"fixed","top":"0px","left":"200px"})
+			}else{
+				$("#l-lie").css({"position":"relative","top":"0px","left":"0px"})
+			}
+		};
+	}
+
+
+
+	shang(){
+	 		this.setState({
+	 			pos:this.state.pos+1
+	 		})
+	 	
+	 		if($(".l-lun").eq(0).offset().left+$(".l-lun").offsetWidth==$("#l-lb").offset().left+$("#l-lb").offsetWidth){
+	 			$("#l-lb").offset().left=$(".l-lun").eq(0).offset().left+$(".l-lun").offsetWidth-$("#l-lb").offsetWidth;
+	 		}else{
+	 			$("#l-lb").css({
+		 			left:-(this.state.pos)*120+"px"
+		 		})
+	 		}
+	 	}
+
+	 	xia(){
+	 		this.setState({
+	 			pos:this.state.pos-1
+	 		})
+	 	
+	 		if($(".l-lun").eq(0).offset().left==$("#l-lb").offset().left){
+	 			$("#l-lb").offset().left=$(".l-lun").eq(0).offset().left
+	 		}else{
+	 			$("#l-lb").css({
+		 			left:(this.state.pos)*120+"px"
+		 		})
+	 		}
+	 	}
+	 	tap(){
+	 		hashHistory.push("/gouwuche")
+	 	}
 
 }
 
