@@ -402,12 +402,13 @@ class About extends React.Component{
 						width: ($(".l-lt").length*120),
 						position:"absolute"
 					});
+					$(".l-img").eq(0).css({
+					opacity: '1',
+				});
 			})
 
 
-		$(".l-img").eq(0).css({
-				opacity: '1',
-			});
+		
 
 	
 		window.onscroll=function(){
