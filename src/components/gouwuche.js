@@ -108,7 +108,7 @@ class Gouwuche extends Component{
                             })
                         }else{
                             alert("请登录")
-                              
+                            hashHistory.push('/login')
                         }
                         
                     }else{

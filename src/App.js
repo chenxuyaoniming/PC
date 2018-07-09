@@ -26,7 +26,7 @@ class App extends Component {
     Store.dispatch(Action(''))
   }
   ret(){
-    console.log(1111)
+    // console.log(1111)
     if(this.state.user){
       return (  
                 <span>
