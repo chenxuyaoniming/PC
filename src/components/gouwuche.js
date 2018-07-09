@@ -1,14 +1,23 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router';
-
+import {Router,Route,hashHistory,IndexRedirect,IndexRoute,Link} from 'react-router';
 import $ from 'jquery';
+import Action from '../redux/action'
+import Renducer from '../redux/renducer'
+import Stor from '../redux/store'
+
+
 
 class Gouwuche extends Component{
     constructor(porps){
         super(porps)
         this.state={
-            jing:''
+            jing:'',
+            yan:'',
+            user:Stor.getState()
         }
+    }
+    change(a){
+        this.setState({user:Stor.getState()})
     }
     componentDidMount(){
         
@@ -25,7 +34,7 @@ class Gouwuche extends Component{
                 $('#ztb_in').val(i)
                 $('.zxiaoji').html($('.zdanjia').html()*i)
                 arr=$('.zxiaoji').html()
-                // console.log(arr)
+                
                 _this.setState({jing:arr})
             })
             $('.zjia').click(function(){
@@ -41,6 +50,35 @@ class Gouwuche extends Component{
             
           
         })
+        // 结算
+        Stor.subscribe(this.change.bind(this))
+
+        var yanz=Math.floor(Math.random()*900000+100000)
+        _this.setState({yan:yanz})
+        var users=_this.state.user;
+        $(function(){
+            $('#zsuiji').click(function(){
+                yanz=Math.floor(Math.random()*900000+100000)
+                _this.setState({yan:yanz})
+            })
+            $('.ztijao_1').click(function(){
+                
+                var zval=$('#zsuiji1').val()
+                var zavl1=$('#zsuiji').html()
+                
+                if(zavl1===zval){
+                    console.log(users)
+                    if(users!==undefined){
+                        alert('成功')
+                    }else{
+                        alert("请登录")
+                        hashHistory.push('/login')
+                    }
+                    
+                }
+            })
+        })
+        
         
     }
     render(){
@@ -168,6 +206,18 @@ class Gouwuche extends Component{
                             <div className="zlv_5"><input type="checkbox" id="zcucun"/><span>储存为常用联系人</span></div>
                             
                         </div>
+
+                    </div>
+                    <div className="zjie">
+                        <div className="zjiesuan"><span>应付总金额：</span><b>￥<span>{this.state.jing}</span></b></div>
+                        <div className="ztijiao">
+                            <div>
+                                <span className="zjiespan">验证码：</span><span id="zsuiji">{this.state.yan}</span><input type="text" id="zsuiji1" placeholder="请输入验证码"/>
+                                <button className="ztijao_1">提交订单</button>
+                            </div>
+                            
+                        </div>
+                        <div></div>
                     </div>
 
                 </div>
@@ -190,26 +240,7 @@ $(function(){
         }
     })
 })
-// 加减结算
-// $(function(){
-//     var i=1;
-//     $('#ztb_in').val(i)
-//     $('.zjian').click(function(){
-        
-//         i++;
-//         $('#ztb_in').val(i)
-//         $('.zxiaoji').html($('.zdanjia').html()*i)
-//     })
-//     $('.zjia').click(function(){
-//         if(i>1){
-//             i--;
-//             $('#ztb_in').val(i)
-//             $('.zxiaoji').html($('.zdanjia').html()*i)
-//         }
-//     })
-    
-//     console.log($('.zxiaoji').html())
-    
-// })
+
+
 
 export default Gouwuche;
