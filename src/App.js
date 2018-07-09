@@ -52,7 +52,15 @@ class App extends Component {
               )
         }
   }
+  toPerson(){
+    if(this.state.user){
+      hashHistory.push('/person')
+    }else{
+      alert('请您先登录~！')
+      hashHistory.push('/login')
+    }
 
+  }
   render() {
     return (
 
@@ -72,7 +80,7 @@ class App extends Component {
                 }
                 
                 <span>
-                  <Link to=''>
+                  <Link id='gPerson' onClick={this.toPerson.bind(this)}>
                     <i className="icon iconfont icon-dingdan">
                     订单查询
                     </i>

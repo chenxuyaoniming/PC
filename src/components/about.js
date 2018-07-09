@@ -87,6 +87,7 @@ class About extends React.Component{
 			arr:{},
 			num:"",
 			pos:1,
+			lun:0,
 			chuan:{},
 			img:[]
 		}
@@ -118,7 +119,7 @@ class About extends React.Component{
 
 
 
-		tag(i){
+		tap(i){
 
 		 	console.log(i.i)
 		 	var cc=i.i;
@@ -177,7 +178,7 @@ class About extends React.Component{
 									{
 										_this.state.img.map((item,i)=>{
 											return(
-												<li><img  key={i} src={item} onClick={_this.tag.bind(_this,{i})} className="l-lt"/></li>
+												<li><img  key={i} src={item} onClick={_this.tap.bind(_this,{i})} className="l-lt"/></li>
 												)
 										})
 									}
@@ -439,30 +440,39 @@ class About extends React.Component{
 
 
 
-	shang(){
-	 		this.setState({
-	 			pos:this.state.pos+1
-	 		})
-	 	
-	 		if($(".l-lun").eq(0).offset().left+$(".l-lun").offsetWidth==$("#l-lb").offset().left+$("#l-lb").offsetWidth){
-	 			$("#l-lb").offset().left=$(".l-lun").eq(0).offset().left+$(".l-lun").offsetWidth-$("#l-lb").offsetWidth;
-	 		}else{
+	xia(){     
+			var _this=this
+	 			console.log($(".l-lun").eq(0).offset().left+$(".l-lun").eq(0).width()-$("#l-lb").width())
+	 		if($(".l-lun").eq(0).offset().left+$(".l-lun").eq(0).width()==$("#l-lb").offset().left+$("#l-lb").width()){
 	 			$("#l-lb").css({
-		 			left:-(this.state.pos)*120+"px"
+		 			left:($(".l-lun").eq(0).offset().left+$(".l-lun").eq(0).width()-$("#l-lb").width())+"px"
+		 		})
+	 		}else{
+	 			_this.setState({
+			 			lun:_this.state.lun-1
+			 		})
+	 			$("#l-lb").css({
+		 			left:_this.state.lun*120+"px"
 		 		})
 	 		}
 	 	}
 
-	 	xia(){
-	 		this.setState({
-	 			pos:this.state.pos-1
-	 		})
-	 	
+	 	shang(){
+	 			
+	 			var _this=this
 	 		if($(".l-lun").eq(0).offset().left==$("#l-lb").offset().left){
-	 			$("#l-lb").offset().left=$(".l-lun").eq(0).offset().left
-	 		}else{
+	 			_this.setState({
+	 			lun:0
+	 			})
 	 			$("#l-lb").css({
-		 			left:(this.state.pos)*120+"px"
+		 			left:"0px"
+		 		})
+	 		}else{
+	 			_this.setState({
+	 			lun:_this.state.lun+1
+	 			})
+	 			$("#l-lb").css({
+		 			left:(_this.state.lun)*120+"px"
 		 		})
 	 		}
 	 	}
